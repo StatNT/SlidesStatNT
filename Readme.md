@@ -84,9 +84,9 @@ Definiremos programación funcional, presentaremos la importancia de la programa
 ## Bibliografía Opcional
 
 
-* Wickham, H. ggplot2: elegant graphics for data analysis. Springer, 2016.
+* Wickham, H. ggplot2: elegant graphics for data analysis. Springer, 2016.[disponible para compilar en Github](https://github.com/hadley/ggplot2-book)
 
-* Wickham, H. Advanced r. CRC Press, 2014.
+* Wickham, H. Advanced r. CRC Press, 2014. [disponible online](http://adv-r.had.co.nz)
 
 * Xie, Yihui. Dynamic Documents with R and knitr. Vol. 29. CRC Press, 2015.
 
