@@ -5,12 +5,6 @@ date:  2 de Febrero, 2018
 output: md_document
 ---
 
-
-
-# <img src="assets/logo.svg" alt="class logo" class="logo"/> Advanced JavaScript syllabus
-
-
-
 * **Curso:** Nuevas Tecnologías para el Análisis Astadístico de Aatos
 * **Profesora:** Natalia da Silva, [natalia@iesta.edu.uy](mailto:natalia@iesta.edu.uy)
 * **Previa reglamentaria:** Estadística Descriptiva
@@ -75,7 +69,6 @@ Definiremos programación funcional, presentaremos la importancia de la programa
 * **Páginas interactivas, apps   y gráficos usando Shiny:**
  Shiny es un paquete de R que brinda un marco web elegante y poderoso para la construcción de aplicaciones web usando R.  Este paquete permite  la posibilidad de transformar tu análisis  en aplicaciones web interactivas  sin tener previo conocimiento de HTML, CSS o JavaScript. Usar shiny permitirá hacer páginas web interactivas donde interactuando con código en R se pueden incluir objetos de R como gráficos, tablas, resúmenes estadísticos y cualquier otro objeto de interés.  Definiremos la estructura básica de  una shinyapp, la interface de usuario (ui) que controla la apariencia de la aplicación. Por otro lado el servidor (server) esta es una función que contiene todas las instrucciones necesarias para construir la aplicación.  Como correr la aplicación  usando la función shinyApp.
 
-
 	Los siguientes dos tópicos serán incluidos si queda tiempo disponible para ello:
 
 
@@ -84,7 +77,7 @@ Definiremos programación funcional, presentaremos la importancia de la programa
 
 
 ## Bibliografía Obligatoria
-*Wickham, Hadley, and Garrett Grolemund. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. " O'Reilly Media, Inc.", 2016. [r4ds](http://r4ds.had.co.nz)
+*Wickham, Hadley, and Garrett Grolemund. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data. " O'Reilly Media, Inc.", 2016. [r4ds disponible online](http://r4ds.had.co.nz)
 		
 
 
