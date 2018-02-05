@@ -1,0 +1,128 @@
+---
+title: "Nuevas tecnologías para el análisis astadístico de datos"
+subtitle: 'Clase 1: Introducción'
+author: "Natalia da Silva (natalia@iesta.edu.uy, @pacocuak)"
+date: ""
+output:
+  xaringan::moon_reader:
+    css: ["myslides", "rladies-font.css"]
+    self_contained: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r, echo = FALSE, warning = FALSE, message=FALSE}
+knitr::opts_chunk$set(
+  message = FALSE,
+  warning = FALSE,
+  collapse = TRUE,
+  echo=FALSE,
+  comment = "",
+  fig.height = 4,
+  fig.width = 8,
+  fig.align = "center",
+  cache = FALSE
+)
+library(tidyverse)
+library(gridExtra)
+library(plotly)
+library(ggthemes)
+```
+
+# Bienvenidos!
+
+- __Prof__: [Natalia da Silva](http://ndasilva.public.iastate.edu) 
+--
+
+- __Computación__: R and RStudio
+--
+
+- __Materiales__: Eva, pruebas online ; [GitHub](https://github.com/natydasilva) materiales
+
+---
+# Curso
+
+- __Clases:__ 2 veces por semana en el laboratorio
+
+- __Asistencia:__ mínimo 80%
+
+- __Curso reglamentado:__
+
+    - Tareas en el laboratorio en grupo 15%
+    - Tareas domiciliarias individual 20%
+    - Proyecto grupal 25%
+    - Proyecto final individual 40%
+    
+- __Aprobación__ del curso con al menos el 80% de los puntos
+
+- De no alcanzar la aprobación del curso, al menos 50% para dar examen    
+---
+
+# Objetivo del Curso
+
+- Introducir al estudiante a nuevas teconologías para el análisis estadístico de datos
+
+- Alfabetización en programación para la investigación reproducible
+
+- Comunicación de resultados, aplicaciones web, paquetes, etc.
+---
+
+# Contenido del Curso
+- R y RStudio IDE
+
+-	Generar reportes con código en R usando R Markdown
+ 
+- Control de versiones usando Git y trabajo colaborativo
+
+- Estructura de datos para el análisis
+
+- Visualización usando ggplot2
+
+- Cómo escribir funciones y trabajar con R en estilo funcional
+
+- Páginas interactivas, apps   y gráficos usando Shiny
+ 
+-	Obtener datos de la web.  Armado de base de datos con información obtenida de la web (si nos queda tiempo).
+
+-	Distribución de datos y código. Como hacer paquetes en R para distribuir código y datos(si nos queda tiempo).
+
+---
+
+# Bibliografía obligatoria
+
+- __Textbook__: [R for Data Science](http://r4ds.had.co.nz), Garret Grolemund and Hadley Wickham
+
+---
+
+
+# Bibliografía opcional
+
+
+- Wickham, H. ggplot2: elegant graphics for data analysis. Springer, 2016.[disponible para compilar en Github](https://github.com/hadley/ggplot2-book)
+
+- Wickham, H. Advanced r. CRC Press, 2014. [disponible online](http://adv-r.had.co.nz)
+
+- Xie, Yihui. Dynamic Documents with R and knitr. Vol. 29. CRC Press, 2015.
+---
+
+# Cómo obtener ayuda
+
+- **Google** es tu amigo! (ej: copia el mensaje de error )
+- **Stackoverflow** incluir etiquetas como [r], [ggplot2] o lo que sea que estas buscando
+- Cómo hacer un ejemplo reproducible,  [Stackoverflow](https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example/5963610#5963610)
+
+- Leer el material del curso, preguntar en foros
+---
+
+
+# R es ...
+
+  - Un lenguaje y ambiente para hacer estadística computacional y gráfica
+  - Es el software más comunmente utilizado en la sciencia de datos [kdnuggets](https://www.kdnuggets.com/2017/05/poll-analytics-data-science-machine-learning-software-leaders.html) 
+  - De uso **gratis** y **abierto** por lo que podemos ver el código 
+  - **Extensible:**  más de 12000 contribuciones de paquetes en CRAN (The Comprehensive R Archive Network)! Bioconductor tiene más de 1400 paquetes y hay otros disponibles en github.
+  - **Potente:** Usando las herramientas adecuadas se puede hacer el trabajo más rápido y mejor
+  - **Flexible:**
