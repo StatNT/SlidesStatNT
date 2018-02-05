@@ -117,12 +117,18 @@ library(ggthemes)
 - Leer el material del curso, preguntar en foros
 ---
 
+# Ejemplos de lo que vamos a aprender!
 
-# R es ...
+- Reportes dinámicos y reproducibles con [R Markdown]( http://rmarkdown.rstudio.com/gallery.html)
 
-  - Un lenguaje y ambiente para hacer estadística computacional y gráfica
-  - Es el software más comunmente utilizado en la sciencia de datos [kdnuggets](https://www.kdnuggets.com/2017/05/poll-analytics-data-science-machine-learning-software-leaders.html) 
-  - De uso **gratis** y **abierto** por lo que podemos ver el código 
-  - **Extensible:**  más de 12000 contribuciones de paquetes en CRAN (The Comprehensive R Archive Network)! Bioconductor tiene más de 1400 paquetes y hay otros disponibles en github.
-  - **Potente:** Usando las herramientas adecuadas se puede hacer el trabajo más rápido y mejor
-  - **Flexible:**
+- Control de versionado y trabajo colaborativo usando Git
+ Tarea ir a [https://github.com/github] y crear un usuario
+ 
+- [tidyverse](https://www.tidyverse.org) 
+
+- [shiny](https://shiny.rstudio.com/gallery/)
+
+- [paquetes](https://cran.r-project.org)
+
+---
+
