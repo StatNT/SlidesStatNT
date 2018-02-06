@@ -95,18 +95,3 @@ Porqué usarlo ?
 # Componentes de RStudio IDE
 <img src="rstudio.pdf" height="80px" width="160px" />
 
-1. Editor fuente
-  - Docking station for multiple files
--
--
-2. Console window
-- Highlighting/Tab-completion
-- Search recent commands
-3. Environment pane
-Useful shortcuts ("Knit")
-- Highlighting/Tab-completion
-- Tools for package development, git, etc
-4. Other tabs/panes
-- Graphics
-- R documentation
-- File system navigation/access
