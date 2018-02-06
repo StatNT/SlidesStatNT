@@ -1,0 +1,112 @@
+---
+title: "Nuevas tecnologías para el análisis astadístico de datos"
+subtitle: 'R y RStudio IDE'
+author: "Natalia da Silva (natalia@iesta.edu.uy, @pacocuak)"
+date: ""
+output:
+  xaringan::moon_reader:
+    css: ["myslides", "rladies-font.css"]
+    self_contained: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+# R es ...
+
+  - Un lenguaje y ambiente para hacer estadística computacional y gráfica
+  - Es el software más comunmente utilizado en la sciencia de datos [kdnuggets](https://www.kdnuggets.com/2017/05/poll-analytics-data-science-machine-learning-software-leaders.html) 
+  - De uso **gratis** y **abierto** por lo que podemos ver el código 
+  - **Extensible:**  más de 12000 contribuciones de paquetes en CRAN (The Comprehensive R Archive Network)! Bioconductor tiene más de 1400 paquetes y hay otros disponibles en github.
+  - **Potente:** Usando las herramientas adecuadas se puede hacer el trabajo más rápido y mejor
+  - **Flexible:** pequeños cambios en la tarea se logran con pequeños cambios en el código que está disponible para el usuario 
+---
+
+# Qué puede hacer R 
+
+- Gráficos, estadística, machine learning, etc. 
+
+- Leer, manipular y modificar datos
+
+- Programación alfabetizada (reportes dinámicos) 
+
+- Aplicaciones web (páginas web, blogs, shiny apps)
+---
+
+# Cómo instalar R
+
+R se actualiza dos veces al año y es recomendable tenerlo actualizado
+
+- Ir a [http://www.r-project.org]
+
+- Seleccionar el link CRAN (Comprehensive R Archive Network )
+
+- Seleccionar un mirror para bajar R (el más cercano geográfocamente no siempre es el mejor)
+
+- Bajar e instalar R para el sistema operativo de tu computadora 
+---
+
+# RStudio  
+
+ RStudio es una empresa que desarrolla herramientas gratis y abiertas para R.
+
+ Julie Lowndes:
+ 
+''If R were an airplane, RStudio would be the airport, providing many, many supporting services that make it easier for you, the pilot, to take off and go to awesome places. Sure, you can fly an airplane without an airport, but having those runways and supporting infrastructure is a game-changer.''
+---
+
+# RStudio IDE 
+IDE: Integrated Development Environment for R
+
+Porqué usarlo ?
+
+- Integra las herramientas que uno usa en R en un único ambiente
+
+- Resalta el código, completa código e indentación inteligente
+
+- Ejecuta código R directamente desde el editor de origen
+
+- Salta rápidamente a las definiciones de funciones
+
+- Se ejecuta en la mayoría de los escritorios o en servidores pero tambien puede accederse en la web
+
+- Incluye poderosas herramientas para programar diseñadas para mejorar tu productividad 
+
+- Facilita una rápida navegación a archivos y funciones
+
+- Hace sencillo comenzar un nuevo proyecto o encontrar proyectos ya existentes
+---
+
+
+# Cómo instalar RStudio
+
+- Ir a  https://www.rstudio.com/
+
+- Mouse sobre Products y seleccionar RStudio
+
+- Seleccionar y bajar  RStudio Desktop 
+---
+
+# RStudio IDE
+
+<img src="rstudio.pdf" height="500px" width="800px" />
+---
+
+# Componentes de RStudio IDE
+<img src="rstudio.pdf" height="80px" width="160px" />
+
+1. Editor fuente
+  - Docking station for multiple files
+-
+-
+2. Console window
+- Highlighting/Tab-completion
+- Search recent commands
+3. Environment pane
+Useful shortcuts ("Knit")
+- Highlighting/Tab-completion
+- Tools for package development, git, etc
+4. Other tabs/panes
+- Graphics
+- R documentation
+- File system navigation/access
