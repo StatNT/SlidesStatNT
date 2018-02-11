@@ -1,0 +1,700 @@
+ \documentclass[9pt]{beamer}
+%\usepackage[dvips]{graphicx}
+\usepackage{mathptmx}
+\usepackage{verbatim}
+\usepackage{fancyvrb}
+\usepackage{lipsum}
+\usepackage{natbib}
+\usepackage{verbatimbox}
+\usepackage{beamerthemesplit}
+\useinnertheme{circles,rounded}
+
+\definecolor{uofsgreen}{RGB}{46,87,139}
+\usecolortheme[named=uofsgreen]{structure}
+%\usetheme[height=7mm]{Rochester} 
+%\useoutertheme{smoothtree}
+%\usecolortheme{structure}
+%\usetheme{Darmstadt}
+%\usefonttheme[onlylarge]{structurebold}
+%\setbeamerfont{frametitle}{size=\normalsize,series=\bfseries}
+%\setbeamertemplate{navigation symbols}{}
+
+\author{IESTA\\
+Natalia da Silva
+}
+
+\title{INFERENCIA 0 POPURRI!}
+
+
+
+\date{31 de Agosto}
+\begin{document}
+ \frame{\titlepage}
+% 
+% %\tableofcontents[hidesubsections]
+% \section{Scope of Presentation}
+% \begin{frame}[fragile]
+% \begin{enumerate}
+% \item Motivation
+% \item Review to understand PPforest
+% \item PPforest visualization
+% \end{enumerate}
+% \end{frame}
+% 
+
+\begin{frame}[fragile]
+ \frametitle{De qu\'e vamos a hablar hoy?}
+\begin{itemize}
+\item Les voy a contar sobre mi formaci\'on
+\item Y en lo que he trabajado en estos an\~os
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+ \frametitle{Formaci\'on!}
+\begin{itemize}
+\item Licenciatura en Econom\'ia UDELAR (Uruguay) 2009
+\item Licenciatura en Estad\'istica UDELAR (Uruguay) 2008
+\item Me fui a estudiar a ISU en Agosto 2011 
+\item Master en Estad\'istica 2014
+\item PhD defensa final 24 Junio 2017
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+ \frametitle{Por qu\'e estudiar afuera?}
+\begin{itemize}
+\item No hay programas de maestr\'ia ni doctorado en estad\'istica en el pa\'is
+\item Es una experiencia incre\'ible 
+\item Es bueno ver como funciona el otro lado del mundo
+\item Y lo mejor es volver para contarlo!
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+ \frametitle{TA}
+\begin{itemize}
+\item TA fui encargada de cursos para estudiantes de grado STAT 104 
+\item TA 226 
+\item Ayudante de cursos de maestr\'ia :
+\begin{itemize}
+\item STAT 585 Data Technologies for Statistical Analysis
+\item STAT 528 Visual Bussines Analytics
+\item VDPAM 
+\end{itemize}
+
+\end{itemize}
+\end{frame} 
+
+
+\begin{frame}[fragile]
+ \frametitle{RA}
+ RA ayudante de inverstigaci\'on Vet-Epi
+\begin{itemize}
+\item A\'alisis y modelado de datos en general de experimentos
+\item Mucho meta-an\'alisis
+\item Al final LSR 
+\end{itemize}
+\end{frame} 
+
+\begin{frame}[fragile]
+ \frametitle{Master y Doctorado}
+ 
+\begin{itemize}
+\item Master: Mixed treatment comparison meta-analysis of porcine circovirus type 2 (PCV2) vaccines used in piglets.
+\item Doctorado: Bagged projection methods for supervised classification in big data
+\end{itemize}
+\end{frame} 
+
+
+\begin{frame}[fragile]
+ \frametitle{Otros proyectos}
+ 
+\begin{itemize}
+\item Twenty-Year Ecological Analysis of Adult Mosquito Communities in Iowa,   \href{https://natydasilva.shinyapps.io/shiny_msq/}{\beamergotobutton{shiny app}}
+\item Exploring the Soul of the Community, proyecto de STAT 503, data expo competition JSM, paper y presentaci\'on en eventos.\href{http://stat-computing.org/dataexpo/2013/posters/dasilvaalvarez_poster1.pdf}{\beamergotobutton{poster}}
+\item Determinants of Poverty in U.S. \href{https://ndasilva.shinyapps.io/shiny-pov/}{\beamergotobutton{shiny app}}
+\item metawRite package GSoC \href{https://github.com/rstats-gsoc/gsoc2017/wiki/metawRite:-Meta-analysis-update-package,-LSR-(Living-systematic-review)}{\beamergotobutton{proyecto}}.
+\item STATCOM presidenta ISU
+\item R-Ladies Ames co-fundadora y ahora en Montevideo! 
+\href{https://www.meetup.com/rladies-montevideo/}{\beamergotobutton{R-Ladies Montevideo}}
+\end{itemize}
+\end{frame} 
+
+
+\begin{frame}[fragile]
+ \frametitle{Otros proyectos}
+ 
+\begin{itemize}
+\item Twenty-Year Ecological Analysis of Adult Mosquito Communities in Iowa,   \href{https://natydasilva.shinyapps.io/shiny_msq/}{\beamergotobutton{shiny app}}
+\item Exploring the Soul of the Community, proyecto de STAT 503, data expo competition JSM, paper y presentaci\'on en eventos.\href{http://stat-computing.org/dataexpo/2013/posters/dasilvaalvarez_poster1.pdf}{\beamergotobutton{poster}}
+\item Determinants of Poverty in U.S. \href{https://ndasilva.shinyapps.io/shiny-pov/}{\beamergotobutton{shiny app}}
+\item metawRite package GSoC \href{https://github.com/rstats-gsoc/gsoc2017/wiki/metawRite:-Meta-analysis-update-package,-LSR-(Living-systematic-review)}{\beamergotobutton{proyecto}}.
+\item STATCOM presidenta ISU
+\item R-Ladies Ames co-fundadora y ahora en Montevideo! 
+ \href{https://github.com/natydasilva/R-LadiesMVD/blob/master/presentaciones/RladiesMVD-First-meetup-30-08-17.pdf}{\beamergotobutton{R-Ladies MVD slides primer reunión}}, 
+\href{https://www.meetup.com/rladies-montevideo/}{\beamergotobutton{R-Ladies Montevideo}}
+\end{itemize}
+\end{frame} 
+
+\begin{frame}[fragile]
+ \frametitle{Contacto}
+\begin{itemize}
+\item En mi p\'agina pod\'es encontrar m\'as info sobre algunos de mis trabajos 
+\href{http://ndasilva.public.iastate.edu}{\beamergotobutton{My Web Page}}
+\item Correo natydasilva@gmail.com
+\item twitter @pacocuak
+\item  \href{https://www.researchgate.net/profile/Natalia_Da_Silva3?ev=hdr_xprf&_sg=ftbZZUxE0CF6zqLVnvMOqiJ5DiCdgcMWzur9bemjeXFMnoxVI2PEkvA9Or3cmP1I7JvLksR6oDE1gVCzgFvNU2i6}{\beamergotobutton{Reaserch Gate }}
+\end{itemize}
+\end{frame}
+% \begin{frame}[fragile]
+%  \frametitle{Meta-an\'alisis}
+%  
+% \end{frame} 
+
+% \subsection{Example}
+% \begin{frame}
+% \frametitle{Crab data}
+% \begin{columns}
+% \begin{column}{6cm}
+% Measurements on rock crabs, 200 observations. 4 classes species-sex. 
+% \begin{enumerate}
+% \item FL the size of the frontal lobe length, in mm
+% \item RW rear width, in mm
+% \item CL length of mid-line of the carapace, in mm
+% \item CW maximum width of carapace, in mm
+% \item BD depth of the body; for females, measured after displacement of the abdomen, in mm
+% \end{enumerate}
+% \end{column}
+% \begin{column}{6cm}
+% \begin{figure}
+% \includegraphics[scale=.6]{crabdata} 
+% \caption{Crab data}
+% \end{figure}
+% \end{column}
+% \end{columns}
+% \end{frame}
+% 
+% \begin{frame}
+% \begin{columns}
+% \begin{column}{6cm}
+% Decision boundaries from rpart
+% \includegraphics[width=6cm,height=6cm ]{crabrpartbound}
+% \end{column}
+% \begin{column}{6cm}
+% Decision boundaries form PPtree
+% \includegraphics[width=6cm,height=6cm ]{crabppbound} 
+% \end{column}
+% \end{columns}
+% \end{frame}
+% 
+% 
+% \section{Objective}
+% \begin{frame}[fragile]
+% \frametitle{Previous work and objective}
+% \begin{enumerate}
+% \item Previous work
+% \begin{itemize}
+% \item Oblique decision trees.  \cite{kim2001}, \cite{brodley}, \cite{tan2005mml}, \cite{truong2009fast}. In R \verb+oblique.tree+.  
+% \item Oblique random forest. \cite{tan2006jj}, \cite{menze2011oblique}. In R \verb+obliqueRF+.
+% \end{itemize}
+% \item Objective
+% \begin{itemize}
+% \item \verb+PPforest+ implements a projection pursuit classification random forest 
+% \item Adapts random forest to utilize combinations of variables in the tree construction
+% \item Projection pursuit classification trees are used to build the forest, ( from \verb+PPtreeViz+ package )
+% \end{itemize}
+% \end{enumerate}
+% \end{frame}
+% 
+% 
+% 
+% 
+% \section{Projection pursuit}
+% \subsection{Projection pursuit}
+% \begin{frame}
+% \frametitle{Projection pursuit}
+% Find interesting low-dimensional linear projections of high-dimensional data optimizing some specified function called the projection pursuit index.
+% 
+% Advantages:
+% \begin{itemize}
+% \item Able to bypass the curse of dimensionality, because work in low-dimensional linear projections.
+% \item Relevant projection pursuit indexes are able to ignore irrelevant variables
+% \end{itemize}
+% 
+% We use LDA and PDA index in our PPforest.
+% %Disadvantage:\\
+% %\begin{itemize}
+% %\item Poor to deal with highly non linear structures.
+% %\item High demand in computer time
+% %\end{itemize}
+% \end{frame}
+% % \subsection{PP index}
+% % \begin{frame}
+% % \frametitle{LDA and PDA}
+% % 
+% % \small{
+% % \begin{equation}
+% %  I_{LDA}(A) = \left\{ 
+% %   \begin{array}{l l}
+% %     1-\frac{|A^T WA|}{|A^T(W+B)A|} &  \text{for} |A^T(W+B)A|\neq 0\\
+% %     0 &  \text{for}  |A^T(W+B)A|= 0
+% %   \end{array} \right.
+% %   \end{equation}
+% %   \begin{equation}
+% % I_{PDA}(A,\lambda)=1-\frac{|A^T\{(1-\lambda)offdiag(W)+diag(W)\}A|}{|A^T\{(1-\lambda)offdiag(w)+diag(W)+B\}A|}
+% % \end{equation}
+% % }
+% % 
+% % \small{
+% % Where A is an orthonormal projection onto a $k$-dimensional space and $\lambda \in [0,1)$ is a pre-determined parameter. $B^S$ is the between-class sums of squares  and $W$ is the within-class sums of square.}
+% % 
+% % \end{frame}
+% 
+% 
+% \subsection{PPtree}
+% \begin{frame}[fragile]
+% \frametitle{PPtree}
+% 
+% Combines tree structure methods with projection pursuit dimension reduction.
+% \verb+PPtree+ projection pursuit classification tree:
+% \begin{enumerate}
+% \item In each node a PP index is maximized to find the optimal $1-D$ projection, $\alpha^*$, for separating all classes in the current data.
+% \item Reduce the number of classes to two, by comparing means and assign new labels, $G_1$ or $G_2$ ($y_i^*$) to each observation.
+% \item Re-do PP with these new group labels finding the $1-D$ projection, $\alpha$ using $(x_i,y^*)$.
+% \item Calculate the decision boundary c, keep $\alpha $ and $c$.
+% \item Separate data into two groups using new group labels $G_1$ and $G_2$.
+% \item For each group, stop if there is only one class else repeat the procedure, the splitting steps are iterated until the last two classes are separated.
+% \end{enumerate}
+% \end{frame}
+% 
+% 
+% 
+% 
+% \section{PPtree}
+% 
+% \begin{frame}
+% \frametitle{rpart vs PPtree}
+% \begin{columns}
+% \begin{column}{6cm}
+% \begin{figure}
+% \includegraphics[scale = .35]{crabrpart} 
+% \caption{rpart tree using crab data}
+% \end{figure}
+% \end{column}
+% \begin{column}{6cm}
+% \begin{figure}
+% \includegraphics[scale = .35]{crabppforest} 
+% \caption{PPtree using crab data}
+% \end{figure}
+% \end{column}
+% \end{columns}
+% \end{frame}
+% 
+% \begin{frame}[fragile]
+% \frametitle{Features of PPtee}
+% \begin{itemize}
+% \item Produces a simple tree.
+% \item Uses association between variables to find separation.
+% \item If a linear separation exists, \verb+PPtree+ produces a tree without misclassification.
+% \item One class is assigned only to one final node, depth of the tree is at most the number of classes.
+% \item The projection coefficients used to obtain the dimension reduction at each node can be used to determine the variable importance (variables are standardized).
+% \end{itemize}
+% \end{frame}
+% 
+% 
+% \section{Projection pursuit random forest}
+% \subsection{PPforest}
+% \begin{frame}[fragile]
+% \frametitle{PPforest }
+% A random forest is an ensemble learning method, built on bagged trees. 
+% \verb+PPforest+ conducts a supervised classification using projection pursuit trees and random forest ideas.
+% Using this combination we are take into account the association between variables to find separation that is not considered in a classic random forest.  
+% \end{frame}
+% 
+% 
+% \begin{frame}[fragile]
+% \frametitle{PPforest algorithm} 
+% \begin{enumerate}
+% \item Input: $L=\{(x_i,y_i), i=1,\ldots n\},\;\;\ y_i\in \{1,\ldots g\} $ where $y_i$ is the class information
+% \item Draw $b=1\ldots B$ bootstrap samples, $L^{*b}$ of size $n$ from $L$
+% \item For each bootstrap sample grow a \verb+PPtree+ classifier $T^{*b}$ and for every node a sample of m variables without replacement is drawn.
+% \item Predict the classes of each case not included in $L^*$ and compute the oob error.
+% \item Based on majority vote predict the class in a new data set.
+% \end{enumerate}
+% \end{frame}
+% 
+% 
+% \subsection{PPforest package}
+% \begin{frame}[fragile]
+% \frametitle{PPforest package}
+% \begin{table}
+% \begin{tabular}{lp{7cm}}\hline
+% \verb+PPforest+:& Run a Projection pursuit classification random forest\\
+% \verb+predict.PPforest+:&Vector with predicted values from a PPforest object\\
+% \verb+ppf_importance+:& Plot a global measure of variable importance\\
+% \verb+pproxy_plot+: & Proximity matrix visualization\\ 
+% \verb+ppf_oob_error+& OOB error summary and visualization\\ \hline
+% \verb+var_select+:& Index id for variables set, sample variables without replacement with constant sample proportion.\\
+% \verb+train_fn+:& Index id for training set, sample in each class with constant sample proportion.\\ 
+% \verb+PPtree_split+:& Projection pursuit classification tree with random variable selection in each split\\
+% \verb+trees_pp+:& Projection pursuit trees for bootstrap samples.\\
+% \verb+ppf_bootstrap+: & Draws bootstrap samples with strata option.\\
+% \verb+print.PPforest+:& Print PPforest object\\ \hline
+% \end{tabular}
+% \end{table}
+% \end{frame}
+% % 
+% % 
+% % \begin{frame}[fragile]
+% % \frametitle{Crab data}
+% % \fontsize{6pt}{6pt}\selectfont
+% % \begin{verbatim}
+% % pprf.crab <- PPforest::PPforest(data = crab, size.tr = 2/3, m = 500, size.p = .7,  
+% %               PPmethod = 'LDA', strata = TRUE)
+% %               str(pprf.crab, max.level = 1)
+% % List of 19
+% %  $ prediction.training: chr [1:132] "BlueMale" "BlueMale" "BlueMale" "BlueMale" ...
+% %  $ training.error     : num 0.0303
+% %  $ prediction.test    : chr [1:68] "BlueFemale" "BlueMale" "BlueMale" "BlueFemale" ...
+% %  $ error.test         : num 0.0882
+% %  $ oob.error.forest   : num 0.0303
+% %  $ oob.error.tree     : num [1:500] 0.1591 0.3265 0.0204 0.1707 0.0536 ...
+% %  $ boot.samp          :Classes grouped_df, tbl_df, tbl and 'data.frame':  132 obs. of  6 
+% %  $ output.trees       :Classes rowwise_df, tbl_df and 'data.frame':	500 obs. of  2 variables:
+% %  $ proximity          :'data.frame':	8778 obs. of  3 variables:
+% %  $ votes              : num [1:132, 1:4] 0.428 0.351 0.291 0.358 0.271 ...
+% %  $ prediction.oob     : chr [1:132] "BlueMale" "BlueMale" "BlueMale" "BlueMale" ...
+% %  $ n.tree             : num 500
+% %  $ n.var              : num 3
+% %  $ type               : chr "Classification"
+% %  $ confusion          : num [1:4, 1:5] 32 1 0 0 1 32 0 0 0 0 ...
+% %  $ call               : language PPforest::PPforest(data = crab, size.tr = 2/3, m = 500, PPmethod = "LDA", size.p = 0.7, strata = TRUE)
+% %  $ train              :'data.frame':	132 obs. of  6 variables:
+% %  $ test               :'data.frame':	68 obs. of  5 variables:
+% %  $ vote.mat           : chr [1:500, 1:132] "BlueFemale" "BlueFemale" "BlueMale" "BlueMale" ...
+% %  - attr(*, "class")= chr "PPforest"
+% % \end{verbatim}
+% % \end{frame}
+% 
+% 
+% \begin{frame}[fragile]
+% \frametitle{Comparison to randomForest}
+% \begin{columns}
+% \begin{column}{6cm}
+% \fontsize{6pt}{7pt}\selectfont
+% \begin{verbatim}
+% rf.crab
+% Call:
+%  randomForest(formula = Type ~ ., data = crab,
+%               proximity = TRUE) 
+%                Type of random forest: classification
+%                      Number of trees: 500
+% No. of variables tried at each split: 2
+% 
+%         OOB estimate of  error rate: 20.5%
+% Confusion matrix:
+%              BF  BM  OF  OM class.error
+% BF           41   3   6   0        0.18
+% BM            3  39   0   8        0.22
+% OF            4   0  41   5        0.18
+% OM            2   5   5  38        0.24
+% \end{verbatim}
+% \end{column}
+% \begin{column}{6cm}
+% \fontsize{6pt}{7pt}\selectfont
+% \begin{verbatim}
+% pprf.crab
+% Call:
+%  PPforest::PPforest(y = crab[,1], x= crab[,-1], size.tr = 1, m = 500, 
+%  PPmethod = "LDA", size.p = 0.5, strata = TRUE) 
+%                Type of random forest: Classification
+%                      Number of trees: 500
+% No. of variables tried at each split: 2
+% 
+%         OOB estimate of  error rate: 6%
+% Confusion matrix:
+%              BF  BM  OF  OM class.error
+% BF           48   2   0   0        0.04
+% BM            5  45   0   0        0.10
+% OF            0   0  45   3        0.10
+% OM            0   1   0  50        0.00
+% \end{verbatim}
+% \end{column}
+% \end{columns}
+% \end{frame}
+% 
+% \section{Visualization}
+% \begin{frame}
+% \frametitle{PPforest  visualization}
+% \begin{itemize}
+% 
+% 
+% \item Importance variable (dot plot, parallel plot)
+% \item OOB error
+% \item Proximity matrix (heat map, MDS)
+% \item Vote matrix (predicted prop plot and simplex plot)
+% \end{itemize}
+% 
+% \end{frame}
+% 
+% \begin{frame}
+% \frametitle{Importance measure visualization using PPtreeViz}
+% \begin{figure}
+% \includegraphics[scale=.4]{pptreimpo} 
+% \end{figure}
+% 
+% In PPtree each node of the tree, the projection coefficients represent the variable importance for the group separation.
+% \end{frame}
+% 
+% \begin{frame}
+% \frametitle{Parallel Coordinate plot}
+% Introduced by Inselberg (1985) very useful to see groups, outliers and structure of many variables at a time. 
+% \begin{itemize}
+% \item a vertical axis is used for each variable
+% \item these axes are parallel to each other
+% \item each observation is represented by a point on each axis
+% \item These points are joined by a piecewise linear that connects the points. \item Each polyline represents one observation.
+% \end{itemize}
+% \end{frame}
+% 
+% \begin{frame}
+% \begin{figure}
+% \includegraphics[scale=.5]{node1} 
+% %\caption{Parallel coordinate plot of importance variable for each node and each tree}
+% \end{figure}
+% \end{frame}
+% 
+% \begin{frame}
+% \frametitle{Importance 2 variables in each node}
+% \begin{figure}
+% \includegraphics[scale=.5]{impofacet} 
+% %\caption{Parallel coordinate plot of importance variable for each node and each tree}
+% \end{figure}
+% \end{frame}
+% 
+% \begin{frame}
+% \frametitle{Importance 3 variables in each node}
+% \begin{figure}
+% \includegraphics[scale=.5]{impofacet2} 
+% %\caption{Parallel coordinate plot of importance variable for each node and each tree}
+% \end{figure}
+% \end{frame}
+% 
+% 
+% 
+% \begin{frame}
+% \frametitle{Importance measure visualization}
+% \begin{columns}
+% \begin{column}{6cm}
+% \begin{figure}
+% \includegraphics[scale=.5]{importance} 
+% \caption{PPforest global importance}
+% \end{figure}
+% \end{column}
+% \begin{column}{6cm}
+%  Weighted mean of the absolute value of the projection coefficients across all nodes in every tree. The weights are the projection pursuit index in each node, and 1-(the out of bag error of each tree).
+% 
+% \end{column}
+% \end{columns}
+% \end{frame}
+% % 
+% % \begin{frame}
+% % \frametitle{Importance measure visualization}
+% % \begin{figure}
+% % \includegraphics[width=10cm,height=5cm]{impo1} 
+% % \caption{Parallel coordinate plot of global importance variable for each node and each tree}
+% % \end{figure}
+% % \end{frame}
+% 
+% 
+% \begin{frame}
+% \frametitle{Proximity matrix visualization}
+%  With a decision tree a proximity measure can be calculated for every pair of observations. After a tree is grown, put all of the data, both training and oob, down the tree. The proximities are represented as a matrix of size $n??n$. If cases $k_i$ and $k_j$ are in the same terminal node increase their proximity by one. At the end, normalize the proximities by dividing by the number of trees.
+% 
+% \end{frame}
+% 
+% \begin{frame}
+% \frametitle{Proximity matrix visualization}
+% \begin{columns}
+% \begin{column}{6cm}
+% %\begin{figure}
+% \includegraphics[scale=.5]{proximity} 
+% %\caption{Proximity matrix heat map plot}
+% %\end{figure}
+% \end{column}
+% \begin{column}{6cm}
+% %\begin{figure}
+% \includegraphics[scale=.6]{mds2} 
+% %\caption{MDS plot}
+% %\end{figure}
+% \end{column}
+% \end{columns}
+% \end{frame}
+% 
+% 
+% 
+% \begin{frame}
+% \frametitle{Cumulative oob error visualization}
+% \centering
+% \begin{figure}
+% \includegraphics[scale = .7]{cumoob} 
+% \end{figure}
+% \end{frame}
+% 
+% \begin{frame}
+% \frametitle{Vote matrix}
+% A matrix with one row for each input data point and one column for each class, giving the fraction or number of (OOB) ??votes?? from the PPforest.
+% \begin{itemize}
+% \item Ternary plot
+% \item Side-by-side jittered dotplot
+% \end{itemize}
+% \end{frame}
+% 
+% 
+% \begin{frame}
+% \frametitle{Ternary plot}
+% 
+% A ternary diagram is a triangular diagram which displays the proportion of three variables that sum to a constant and which does so using barycentric coordinates. 
+% The advantages of ternary plot is that we can plot the proportions of tree variables in two dimensions are useful to visualize compositional data.
+% 
+% 
+% \end{frame}
+% 
+% 
+% \begin{frame}
+% \begin{columns}
+% \begin{column}{6cm}
+% \begin{figure}
+% \includegraphics[scale=.6]{tern2} 
+% \end{figure}
+% \end{column}
+% \begin{column}{6cm}
+% Every point on a ternary plot represents a different composition of the three components. Different methods used to determine the ratios of the three species in the composition. Intersection method.
+% \begin{itemize}
+% \item $X\%, \frac{|z_1 P|}{|z_1X|}$
+% \item $Z\%, \frac{|y_1 P|}{|y_1Z|}$
+% \item $Y\%, \frac{|x_1P|}{|x_1Y|}$
+% \end{itemize}
+% \end{column}
+% \end{columns}
+% \end{frame}
+% 
+% 
+% 
+% 
+% \begin{frame}
+% \begin{columns}
+% \begin{column}{6cm}
+% \begin{figure}
+% \includegraphics[scale=.5]{tri} 
+% \end{figure}
+% \end{column}
+% \begin{column}{6cm}
+% In each point draw a line parallel to a side of the triangle and in each side we can identify the composition percentage for each point.
+% \end{column}
+% \end{columns}
+% \end{frame}
+% 
+% \begin{frame}
+% A ternary plot works well when there are only 3 components in the composition.  But when we have more components we need a to extend the ternary diagram to more dimensions. 
+% \end{frame}
+% 
+% \begin{frame}
+% Ternary plot approach for crab data
+% \begin{itemize}
+% \item interactive example in shiny.
+% \item tetrahedron using tourr package
+% \end{itemize}
+% \end{frame}
+% 
+% \begin{frame}
+% My first approach to deal with more than 3 classes was select tree classes  and distribute the proportion of the non selected classes uniform in the selected ones. See shiny example
+% 
+% \end{frame}
+% 
+% 
+% \begin{frame}
+% \frametitle{Vote matrix visualization}
+% \begin{figure}
+% \includegraphics[scale=.5]{pred} 
+% \end{figure}
+% \end{frame}
+% 
+% \begin{frame}
+% Do you have some ideas for our PPforest visualization?
+% 
+% \end{frame}
+% % \begin{frame}
+% % \begin{figure}
+% % \begin{columns}
+% % \begin{column}{6cm}
+% % \includegraphics[scale=.4]{tri} 
+% % \end{figure}
+% % \end{column}
+% % \begin{column}{6cm}
+% % In each point draw a line parallel to a side of the triangle.
+% % \end{column}
+% % \end{columns}
+% % \end{frame}
+% 
+% % 
+% % 
+% % \begin{frame}
+% % \frametitle{Prediction accuracy comparison}
+% % \small{
+% % \begin{center}
+% % \begin{table}
+% % \caption{Comparison of PPtree, CART, random forest and PPforest results with various data sets. The mean of training and test error rates from 200 re-samples is shown \label{res}}
+% % \begin{tabular}{l|cccc|cccc}\hline\hline
+% %  &&&{TRAIN}&&&&{TEST}&\\   
+% %   &PPtree&	Cart&	RF&	PPforest&	PPtree&	Cart&	RF&	PPforest\\ \hline\hline
+% % Crab&	0.04&	0.27&	0.21&	0.05&	0.06&	0.45&	0.31&	0.04\\
+% % Leuke.&	0.01&	0.04&	0.06&	0.00&	0.05&	0.15&	0.00&	0.00\\
+% % Lymph.&	0.03&	0.05&	0.09&	0.00&	0.07&	0.17&	0.04&	0.04\\
+% % NCI60&	0.06&	0.46&	0.45&	0.00&	0.48&	0.75&	0.33&	0.19\\
+% % Wine&	0.00&	0.05&	0.03&	0.01&	0.02&	0.12&	0.00&	0.00\\
+% % Glass&	0.31&	0.24&	0.25&	0.27&	0.42&	0.34&	0.18&	0.32\\
+% % Fish.&	0.00&	0.14&	0.20&	0.00&	0.02&	0.23&	0.26&	0.02\\
+% % Image&	0.07&	0.07&	0.02&	0.06&	0.07&	0.08&	0.03&	0.07\\
+% % Parki.&	0.12&	0.08&	0.11&	0.12&	0.18&	0.16&	0.09&	0.18\\ \hline\hline
+% % \end{tabular}
+% % \end{table}
+% % \end{center}
+% % }
+% % \end{frame}
+% 
+% % 
+% % \section{Final comments}
+% % \begin{frame}[fragile]
+% % \frametitle{Comments}
+% % \begin{enumerate}
+% % \item \verb+PPforest+ uses the association between variables to find separation.
+% % \item The strength of each individual tree in the forest increases when classes are linearly separable, smaller error rate in the forest.
+% % \item The predictive performance is better than other classifiers for some of the analyzed data.
+% % \end{enumerate}
+% % \end{frame}
+% 
+% % \begin{frame}
+% % \frametitle{Further work}
+% % \begin{enumerate}
+% % \item Improve the performance of the algorithm.
+% % \item Incorporate additional project pursuit indexes.
+% % \item Improve the visualization.
+% % \item Work in regression PPforest.
+% % \end{enumerate}
+% % \end{frame}
+% 
+% 
+% 
+% % \begin{frame}[allowframebreaks]{References}
+% % \def\newblock{}
+% % \bibliographystyle{asa}
+% % \bibliography{biblio}
+% % \end{frame}
+
+\end{document}
