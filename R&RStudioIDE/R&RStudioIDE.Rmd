@@ -115,6 +115,32 @@ Porqué usarlo ?
 - Checkea el código (R, HTML, JS)
 - Debugging
 
+
+---
+
+# RStudio IDE, 1 Panel de Código
+
+<img src="codpane.pdf" height="500px" width="800px" />
+---
+
+#  RStudio IDE, 1 Panel de Código
+<img src="codpane.pdf" height="100px" width="160px" />
+- 1 Pestaña de trabajo actual, nombre del archivo y extensión.
+- 2 Ventana independiente para el archivo actual.
+- 3 Guardar el archivo actual.
+- 4 Chequeo ortográfico. 
+- 5 Buscar y Reemplazar.
+- 6 Compila el documento interactivo, ejemplo Rmd, Rnw.
+- 7 Opciones para el documento.
+- 8 Insertar chunks de diferentes lenguajes
+- 9 Moverme en el documento
+- 10 Ejecutar todo el código con el comando .
+- 11 Publicar el archivo online.
+
+---
+
+# Componentes de RStudio IDE, 2 Panel de Consola
+
 2 **Panel de Consola**
 - Resaltado en linea/completado de código
 - Búsqueda de comandos recientes
@@ -131,5 +157,7 @@ Porqué usarlo ?
 - Grápicos
 - Documentación de R 
 - Sistema de navegación/acceso de archivos
+---
+
 
 
