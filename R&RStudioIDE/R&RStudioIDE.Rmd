@@ -46,6 +46,19 @@ R se actualiza dos veces al año y es recomendable tenerlo actualizado
 - Bajar e instalar R para el sistema operativo de tu computadora 
 ---
 
+# IDE
+
+Recomendable usar un IDE (entorno de desarrollo integrado) para facilitar el desarrollo de c\'odigo en R entre otros.
+
+IDE ejemplos: 
+
+- [Tinn-R](https://sourceforge.net/projects/tinn-r/files/)
+- [R commander](http://www.rcommander.com)
+- [RStudio](https://www.rstudio.com) 
+
+En esta clase vamos a usar RStudio
+---
+
 # RStudio  
 
  RStudio es una empresa que desarrolla herramientas gratis y abiertas para R.
@@ -68,7 +81,7 @@ Porqué usarlo ?
 
 - Salta rápidamente a las definiciones de funciones
 
-- Se ejecuta en la mayoría de los escritorios o en servidores pero tambien puede accederse en la web
+- Se ejecuta en la mayoría de los escritorios o en servidores pero tambi\'en puede accederse en la web
 
 - Incluye poderosas herramientas para programar diseñadas para mejorar tu productividad 
 
@@ -93,5 +106,30 @@ Porqué usarlo ?
 ---
 
 # Componentes de RStudio IDE
-<img src="rstudio.pdf" height="80px" width="160px" />
+<img src="rstudio.pdf" height="100px" width="160px" />
+
+1  **Panel de  Código**
+- Estación de acoplamiento de múltiples archivos
+- Atajos útiles, ejemplo `Knit`, `Run`
+- Resaltado en linea/completado de código
+- Checkea el código (R, HTML, JS)
+- Debugging
+
+2 **Panel de Consola**
+- Resaltado en linea/completado de código
+- Búsqueda de comandos recientes
+
+---
+# Componentes de RStudio IDE
+<img src="rstudio.pdf" height="100px" width="160px" />
+
+3 **Panel de entorno**
+- Herramientas para desarrollo de paquetes, git, etc
+
+
+4 **Otras tabs/panel**
+- Grápicos
+- Documentación de R 
+- Sistema de navegación/acceso de archivos
+
 
