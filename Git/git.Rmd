@@ -1,0 +1,18 @@
+---
+title: "Nuevas tecnologías para el análisis astadístico de datos"
+subtitle: 'Git'
+author: "Natalia da Silva (natalia@iesta.edu.uy, @pacocuak)"
+date: ""
+output:
+  xaringan::moon_reader:
+    css: ["myslides", "rladies-font.css"]
+    self_contained: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+# Git
+
+- que es y para que sirve
