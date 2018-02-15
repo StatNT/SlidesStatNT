@@ -164,14 +164,14 @@ usuarios mac  [command] en vez de [control]
 
 ---
 
-# Componentes de RStudio IDE
+# Otros componentes de RStudio IDE
 <img src="rstudio.pdf" height="100px" width="160px" />
 
-3 **Panel de entorno**
+ **3 Panel de entorno**
 - Herramientas para desarrollo de paquetes, git, etc
 
 
-4 **Otras tabs/panel**
+ **4 Otras tabs/panel**
 - Grápicos
 - Documentación de R 
 - Sistema de navegación/acceso de archivos
@@ -181,12 +181,15 @@ usuarios mac  [command] en vez de [control]
 
 Cosas que hacemos por gusto personal:
 
-- El editor de R que usamos
-- El nombre del directorio donde trabajamos "../pepapig"
+- El editor de R que usamos.
+
+- El nombre del directorio donde trabajamos "../pepapig".
+
 
 Los productos: 
 
 - los datos crudos
+
 - el código R que se necesita para que cualquiera corra tu código y obtenga los mismos resultados incluyendo las librerías necesarias.
 
 IMPORTANTE: No ates nada de tus hábitos (ej: "../pepapig") en tu producto.
@@ -208,7 +211,9 @@ IMPORTANTE: No ates nada de tus hábitos (ej: "../pepapig") en tu producto.
  Hace tu código frágil, y no reproducible
  
 - Cuando renombres el directorio.
+
 - Cambies de compu.
+
 - Lo  compartas.
 
 ---
@@ -257,4 +262,16 @@ Ruta a el archivo `datos.txt` en un subdirectorio
 
 here("R&RStudioIDE",  "datos.txt")
 ```
+---
+
+# Tarea para hoy!!!
+
+- Actualizar  R (version 3.4.3) y RStudio (1.1.423) 
+
+- Hacerte una cuenta de twitter y seguir a @STAT_NT
+
+-  Mandame una tweet a @STAT_NT con las fotos que muestren tu consola con la versión actualizada de R y RStudio.
+
+- Usá `version` y `RStudio.Version()`
+
 
