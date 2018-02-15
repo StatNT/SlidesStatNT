@@ -41,14 +41,14 @@ R se actualiza dos veces al año y es recomendable tenerlo actualizado
 
 - Seleccionar el link CRAN (Comprehensive R Archive Network )
 
-- Seleccionar un mirror para bajar R (el más cercano geográfocamente no siempre es el mejor)
+- Seleccionar un mirror para bajar R (el más cercano geográficamente no siempre es el mejor)
 
 - Bajar e instalar R para el sistema operativo de tu computadora 
 ---
 
 # IDE
 
-Recomendable usar un IDE (entorno de desarrollo integrado) para facilitar el desarrollo de c\'odigo en R entre otros.
+Recomendable usar un IDE (entorno de desarrollo integrado) para facilitar el desarrollo de código en R entre otros.
 
 IDE ejemplos: 
 
@@ -81,7 +81,7 @@ Porqué usarlo ?
 
 - Salta rápidamente a las definiciones de funciones
 
-- Se ejecuta en la mayoría de los escritorios o en servidores pero tambi\'en puede accederse en la web
+- Se ejecuta en la mayoría de los escritorios o en servidores pero también puede accederse en la web
 
 - Incluye poderosas herramientas para programar diseñadas para mejorar tu productividad 
 
@@ -105,10 +105,9 @@ Porqué usarlo ?
 <img src="rstudio.pdf" height="500px" width="800px" />
 ---
 
-# Componentes de RStudio IDE
+# RStudio IDE, 1 Panel de Código
 <img src="rstudio.pdf" height="100px" width="160px" />
 
-1  **Panel de  Código**
 - Estación de acoplamiento de múltiples archivos
 - Atajos útiles, ejemplo `Knit`, `Run`
 - Resaltado en linea/completado de código
@@ -139,13 +138,32 @@ Porqué usarlo ?
 
 ---
 
-# Componentes de RStudio IDE, 2 Panel de Consola
+# RStudio IDE, 1 Panel de Código
 
-2 **Panel de Consola**
+Acceso rápido a
+```{r, echo=FALSE,message=FALSE,warning=FALSE, results='asis'}
+library(tidyverse)
+library(xtable)
+data_frame(
+  Comando = c('[tab]', '[control] + [shift] + [A]', '[control] + [enter]', '[control] + [s]' ),
+  Uso = c("Opción autocompletado de código","Formatea código de R seleccionado ","Ejecuta  las líneas seleccionadas ","Salva el archivo" )
+) %>% xtable() %>% print.xtable(type = "html")
+
+
+
+```
+
+usuarios mac  [command] en vez de [control]
+---
+
+# RStudio IDE, 2 Panel de Consola
+
+**2 Panel de Consola**
 - Resaltado en linea/completado de código
 - Búsqueda de comandos recientes
 
 ---
+
 # Componentes de RStudio IDE
 <img src="rstudio.pdf" height="100px" width="160px" />
 
@@ -159,5 +177,84 @@ Porqué usarlo ?
 - Sistema de navegación/acceso de archivos
 ---
 
+# Hábitos de trabajo vs productos
 
+Cosas que hacemos por gusto personal:
+
+- El editor de R que usamos
+- El nombre del directorio donde trabajamos "../pepapig"
+
+Los productos: 
+
+- los datos crudos
+- el código R que se necesita para que cualquiera corra tu código y obtenga los mismos resultados incluyendo las librerías necesarias.
+
+IMPORTANTE: No ates nada de tus hábitos (ej: "../pepapig") en tu producto.
+
+---
+
+# setwd()
+
+¿Para qué sirve esta función?
+
+¿Problema de usar `setwd()` en tu código?
+
+`setwd("/Users/natydasilva/jajajuas")`
+
+---
+
+# NO USAR `setwd()`!!!
+
+ Hace tu código frágil, y no reproducible
+ 
+- Cuando renombres el directorio.
+- Cambies de compu.
+- Lo  compartas.
+
+---
+
+# Crear proyectos en R
+
+
+- Organizar cada análisis de datos en un proyecto (Carpeta en tu compu que contine todos los archvos relevantes para tu trabajo particular)
+
+- En RStudio es sencillo de implementar. 
+
+- El código se escribe asumiendo que el directrio de trabajo queda fijado al directorio del proyecto, código reproducible.
+
+---
+
+# ¿Porqué trabajar en proyectos?
+
+ Nos garantiza que el proyecto puede ser movido y el código aún funciona
+
+---
+
+# Proyectos y el paquete `here` 
+
+Para eliminar `setwd()`:
+
+- Trabajar con proyectos, carpetas para cada uno con todo lo necesario.
+
+- Usar `here()` del paquete `here` para que nos de la ruta para leer o escribir archivos.
+
+- `here()` nos da la ruta relativa al directorio donde vive el proyecto.
+
+---
+
+
+# `here()`
+
+
+```{r, message=FALSE,warning=FALSE}
+library(here)
+here()
+
+```
+
+Ruta a el archivo `datos.txt` en un subdirectorio
+```{r, message=FALSE,warning=FALSE}
+
+here("R&RStudioIDE",  "datos.txt")
+```
 
