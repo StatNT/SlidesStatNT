@@ -1,6 +1,6 @@
 ---
 title: "Nuevas tecnologías para el análisis astadístico de datos"
-subtitle: 'Git'
+subtitle: 'Git & GitHub'
 author: "Natalia da Silva (natalia@iesta.edu.uy, @pacocuak)"
 date: ""
 output:
@@ -24,7 +24,7 @@ proyectos grandes de desarrolo de software.
 
 # GitHub
 
-- Brida un lugar en internet para tu proyecto basado en Git.
+- Brinda un lugar en internet para tu proyecto basado en Git.
 
 - Es un canal de distribución para manejar tu proyecto de Git.
 
@@ -43,11 +43,15 @@ proyectos grandes de desarrolo de software.
 
 # Que hacer
 
-- Dedicar una carpeta para cada proyecto
-- Que el proyecto sea de RStudio
-- Hacer un repositorio nuevo de Git
-- Trabajar en el proyecto y en vez de salvar hago `commit`
-- `push`  el  `commit` al repositorio de GitHub
+- Dedicar una carpeta para cada proyecto.
+
+- Que el proyecto sea de RStudio.
+
+- Hacer un repositorio nuevo de Git.
+
+- Trabajar en el proyecto y en vez de salvar hago `commit`.
+
+- `push`  el  `commit` al repositorio de GitHub.
 
 ---
 
@@ -68,6 +72,8 @@ proyectos grandes de desarrolo de software.
 
 - **Pull requests**
 
+
+# Actividad grupos
 
 
 
