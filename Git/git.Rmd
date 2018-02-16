@@ -13,6 +13,63 @@ output:
       countIncrementalSlides: false
 ---
 
-# Git
+# Git es...
 
-- que es y para que sirve
+- Git es uns sistema de control de versionado orinalmente diseñado para ayudar a grupos de desarrolladores a hacer trabajo colaborativo en
+proyectos grandes de desarrolo de software.
+
+- Git ha sido tomado por la comunidad de ciencia de datos redefiniendo el proposito. Lo usamos para manejar la colección de archivos que hacen a un proyecto.
+<!-- datos, figuras, reportes, codigo fuente -->
+---
+
+# GitHub
+
+- Brida un lugar en internet para tu proyecto basado en Git.
+
+- Es un canal de distribución para manejar tu proyecto de Git.
+
+- Colaborar, otras personas puden ver el proyecto, sincronizarlo con el tuyo y hacer cambios.
+---
+
+# Que necesitamos
+
+- Installar Git
+
+- Conectar Git con GitHub
+
+- Lograr que RStudio se comunique con Git y GitHub
+
+---
+
+# Que hacer
+
+- Dedicar una carpeta para cada proyecto
+- Que el proyecto sea de RStudio
+- Hacer un repositorio nuevo de Git
+- Trabajar en el proyecto y en vez de salvar hago `commit`
+- `push`  el  `commit` al repositorio de GitHub
+
+---
+
+# Que ganamos
+
+- Mostrar tu trabajo publicamente
+<!-- - La gente puede ver tu trabajo si el repositorio es público usar tu código pueden clonar o forkear el repositorio -->
+
+- Seguir de cerca proyectos interesantes
+<!-- - Si te interesa algún proyecto de otro podes tener notificaciones de actualizaciones o forkear el repositorio -->
+
+- Colaboradores predeterminados y hasta externos
+---
+
+# Otros
+
+- **Issues**
+
+- **Pull requests**
+
+
+
+
+
+
