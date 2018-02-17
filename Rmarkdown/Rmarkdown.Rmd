@@ -1,0 +1,55 @@
+---
+title: "Nuevas tecnologías para el análisis astadístico de datos"
+subtitle: 'Rmarkdown'
+author: "Natalia da Silva (natalia@iesta.edu.uy, @pacocuak)"
+date: ""
+output:
+  xaringan::moon_reader:
+    css: ["myslides", "rladies-font.css"]
+    self_contained: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+# Punteo
+
+- Que es markdown y R markdown
+- Crear un archivo RMarkdown, cuncks de código y modificadores
+
+ Materiales addicionales:
+
+http://rmarkdown.rstudio.com/index.html
+
+---
+
+# Que es Markdown
+
+ - Markdown is un tipo particular de leguaje de marcado (markup lenguage)
+- Estos lenguajes son diseñados para producir documentos de texto plano.
+
+- Por ejemplo LaTeX es otro "markup language" para crear documentos pdf. 
+
+- LaTeX te da mucho más control pero tiene una curva de aprendizaje mayor.
+
+- Markdown se está volviendo un standard y muchas web están generando HTML con Markdown.
+
+---
+
+# Comandos de Markdown
+|Syntaxis| Resultado|
+|Texto plano = Texto plano|
+|`*A*` o `_A_` = Itáliaca|
+|`# Encabezado 1` |# Encabezado 1|
+|`## Encabezado 2` |## Encabezado 2|
+|`### Encabezado 3` |### Encabezado 3|
+|`#### Encabezado 4` |#### Encabezado 4|
+|`##### Encabezado 5` |##### Encabezado 5|
+`###### Encabezado 6` |###### Encabezado 6|
+|ecuación en la linea: `$B = \pi*R^{2}$`|$B = \pi*R^{2}$|
+
+
+
+
