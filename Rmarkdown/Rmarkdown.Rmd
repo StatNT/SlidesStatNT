@@ -40,16 +40,25 @@ http://rmarkdown.rstudio.com/index.html
 
 # Comandos de Markdown
 |Syntaxis| Resultado|
-|Texto plano = Texto plano|
-|`*A*` o `_A_` = Itáliaca|
-|`# Encabezado 1` |# Encabezado 1|
-|`## Encabezado 2` |## Encabezado 2|
-|`### Encabezado 3` |### Encabezado 3|
-|`#### Encabezado 4` |#### Encabezado 4|
-|`##### Encabezado 5` |##### Encabezado 5|
-`###### Encabezado 6` |###### Encabezado 6|
-|ecuación en la linea: `$B = \pi*R^{2}$`|$B = \pi*R^{2}$|
+| ------------- |:-------------| 
+|Texto plano | Texto plano|
+|`*A*` o `_A_` | Itáliaca|
+|`# Encabezado 1` | #Encabezado 1|
+|`## Encabezado 2` | ##Encabezado 2|
+|`### Encabezado 3` | ###Encabezado 3|
+|`#### Encabezado 4` | ####Encabezado 4|
+|`##### Encabezado 5` | #####Encabezado 5|
+`###### Encabezado 6` | ######Encabezado 6|
+|ecuación en la linea: `$B | \pi*R^{2}$`|$B = \pi*R^{2}$|
+---
 
 
+# Qué es R Markdown
+
+- Formato que es capaz de crear documento dinamicos presentaciones
+y reportes desde R
+
+- combina la sintaxis de markdown y código R. Los resultados del código pueden ser incluídos en el documento.
+---
 
 
