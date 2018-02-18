@@ -91,6 +91,11 @@ y reportes desde R
 # Seleccionar el formato 
 
 <img src="formatrmd.png" height="500px" width="660px" />
+---
+
+# Componentes del Rmd 
+<img src="structurermd.pdf" height="500px" width="660px" />
+---
 
 # Trabajo en clase
 
