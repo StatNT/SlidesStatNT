@@ -39,26 +39,59 @@ http://rmarkdown.rstudio.com/index.html
 ---
 
 # Comandos de Markdown
-|Syntaxis| Resultado|
-| ------------- |:-------------| 
-|Texto plano | Texto plano|
-|`*A*` o `_A_` | Itáliaca|
-|`# Encabezado 1` | #Encabezado 1|
-|`## Encabezado 2` | ##Encabezado 2|
-|`### Encabezado 3` | ###Encabezado 3|
-|`#### Encabezado 4` | ####Encabezado 4|
-|`##### Encabezado 5` | #####Encabezado 5|
-`###### Encabezado 6` | ######Encabezado 6|
-|ecuación en la linea: `$B | \pi*R^{2}$`|$B = \pi*R^{2}$|
+
+- Encabezados (# H1, ## H2, hasta ###### H6)
+- Enfatizadores (itálica `*A*` ó `_A_`, negrita `**A**` ó `__A__`)
+- Listas (no ordenadas `*`, `-`, `+`  inicio de cada linea. Ordenadas 1. , 2. etc al inicio de cada linea)
+- Links (`[link en una linea](https://www.google.com)`)
+- Imágenes (`![](smallorb.png)`)
+- Tablas
+- HTML directo en markdown
+- Videos de YouTube
+- Y más
+
+
 ---
 
 
 # Qué es R Markdown
 
-- Formato que es capaz de crear documento dinamicos presentaciones
+- Formato que es capaz de crear documento dinámicos presentaciones
 y reportes desde R
 
-- combina la sintaxis de markdown y código R. Los resultados del código pueden ser incluídos en el documento.
+- Combina la sintaxis de markdown incorporando código R en `chunks` donde el código puede ser corrido y los resultados pueden ser incluídos en el documento.
+
+- Los documentos de R Markdown son completamente reporoducibles. Puede ser automáticamente regenerado si el coódigo y/ó los datos se modifican. 
+
+[Guia de referencia](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+
+[R Markdown Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
+
 ---
 
 
+# Porqué usar R Markdown?
+
+- Es **simple**. Se enfocaen la escritura más que depurar errores.
+
+- Es **flexible**. Markdown fue creado para simplificar la escritura de HTML, pero gracias a `pandoc` Markdown se convierte a muchos formatos.
+
+- Es **dinámico**. Arreglar errores y modificar datos. Regenerar tu reporte sin copiar y pegar. Incentiva la transparencia y el trabajo colaborativo.
+
+- Permite la **interactividad/reactividad**, permite a los usuarios explorar tu análisis en vez de solamente leerlo pasivamente.
+
+---
+
+# Hola RMarkdown!
+
+<img src="creatermd.pdf" height="500px" width="660px" />
+---
+
+
+# Seleccionar el formato 
+
+<img src="formatrmd.png" height="500px" width="660px" />
+
+# Trabajo en clase
+
+---
