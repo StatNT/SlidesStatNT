@@ -16,8 +16,9 @@ output:
 
 # Punteo
 
-- Que es markdown y R markdown
-- Crear un archivo RMarkdown, cuncks de código y modificadores
+- Que es markdown y R markdown. 
+
+- Crear un archivo RMarkdown, cuncks de código y modificadores.
 
  Materiales addicionales:
 
