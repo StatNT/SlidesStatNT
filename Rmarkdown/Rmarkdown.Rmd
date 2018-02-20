@@ -41,15 +41,28 @@ http://rmarkdown.rstudio.com/index.html
 
 # Comandos de Markdown
 
-- Encabezados (# H1, ## H2, hasta ###### H6)
-- Enfatizadores (itálica `*A*` ó `_A_`, negrita `**A**` ó `__A__`)
-- Listas (no ordenadas `*`, `-`, `+`  inicio de cada linea. Ordenadas 1. , 2. etc al inicio de cada linea)
-- Links (`[link en una linea](https://www.google.com)`)
-- Imágenes (`![](smallorb.png)`)
-- Tablas
-- HTML directo en markdown
-- Videos de YouTube
+- **Itálica**, encerrar una palabra o frase en asteriscos simples * 
+
+- **Negrita**, encerrar un mensaje o una frase en asteriscos dobles **
+
+- **Resaltar código en una linea**, encerrandolo en ` `` `
+
+- **Crear encabezado de sección**, incluyendo al inicio del la sección `#`
+
+- **Otros encabezados**, incluyendo de 2 a 6 `#` son subsecciones y sub títulos.
+
+- **Listas** (no ordenadas `*`, `-`, `+`  inicio de cada linea. Ordenadas 1. , 2. etc al inicio de cada linea)
+
+- **Links** (`[link en una linea](https://www.google.com)`)
+
+- **Imágenes** (`![](smallorb.png)`)
+
 - Y más
+<!-- - Tablas -->
+<!-- - HTML directo en markdown -->
+<!-- - Videos de YouTube -->
+<!-- - Y más -->
+
 
 
 ---
@@ -57,10 +70,13 @@ http://rmarkdown.rstudio.com/index.html
 
 # Qué es R Markdown
 
+
 - Formato que es capaz de crear documento dinámicos presentaciones
 y reportes desde R
 
 - Combina la sintaxis de markdown incorporando código R en `chunks` donde el código puede ser corrido y los resultados pueden ser incluídos en el documento.
+
+- Documentos en RMarkdown son documentos en Markdown.
 
 - Los documentos de R Markdown son completamente reporoducibles. Puede ser automáticamente regenerado si el coódigo y/ó los datos se modifican. 
 
@@ -98,6 +114,26 @@ y reportes desde R
 <img src="structurermd.pdf" height="500px" width="660px" />
 ---
 
+# Opciones de Coódigo 
+
+`
+```{r chunk-name}  
+1 + 1 
+```
+
+`
+Los códigos de R empiezan y termina con ` ``` `
+los `{ }` indican que en el medio va coódigo de R, a su vez podemos ponerle nombre y al cunck.
+
+---
+
+# Otras  opciones de RMarkdown 
+
+
+
 # Trabajo en clase
 
 ---
+
+
+
