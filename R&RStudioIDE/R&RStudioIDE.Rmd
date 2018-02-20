@@ -274,4 +274,3 @@ here("R&RStudioIDE",  "datos.txt")
 
 - Usá `version` y `RStudio.Version()`
 
-
