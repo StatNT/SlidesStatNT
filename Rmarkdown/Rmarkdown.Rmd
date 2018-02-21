@@ -116,22 +116,60 @@ y reportes desde R
 
 # Opciones de Coódigo 
 
-`
-```{r chunk-name}  
-1 + 1 
-```
 
-`
-Los códigos de R empiezan y termina con ` ``` `
-los `{ }` indican que en el medio va coódigo de R, a su vez podemos ponerle nombre y al cunck.
+`     ```{r nombre del chunk}    `
+
+` 1 + 1  `
+
+`  ```   `
+
+Los códigos de R empiezan y termina con `  ```  `
+los `{ }` indican que en el medio va código de R, a su vez podemos ponerle nombre y al cunck.
+
+Podemos fijar al inicio del documento algo como:
+
+`  ```{r fijar}  `  
+`  knitr::opts_chunk$set(echo = TRUE)  `  
+
+`  ```  `
+
+esto fija en todo el documento la opción de mostrar todo el código  R en el documento final.
 
 ---
 
-# Otras  opciones de RMarkdown 
+# Más opciones de código
 
+Si queremos que no se evalúe (ó corra) el código de R:
 
+`  ```{r nombre, eval=FALSE, otras opciones} `
+
+` ```  `
+
+- ` message = FALSE ` no se imprimen los mensajes por ejemplos cuando cargamos un paquete.
+
+- ` warning = FALSE ` no printea los ` warnings `, ej: conflicto de versionesstops 
+
+- ` error = FALSE ` puede ser usado para hacer que compile el documento incluso si alguún chunk tiene problemas.
+
+- ` echo = TRUE ` muestra el coódigo, ` echo = FALSE ` no.
+
+ [Yihui](https://yihui.name)
+ (escribió `knitr` entre otros) tienen una muy buena página con mucha info de esto y más. 
+
+---
 
 # Trabajo en clase
+
+Armar un archivo de Rmarkdown que tenga:
+
+1. Título: RMarkdown en grupo
+
+2. Texto que presente a cada integrante del grupo en una tabla con 4 columnas (Nombre, Año que cursa, Trabaja (hs semana), Uso R (en años)  )
+
+3. Incluir un chunk con código en R que simule 100 observaciones de una distribución normal standard y printé el resumen estadístico.
+
+4. Generar un repo en GitHub con el nombre "Grupo número" y  subir el trabajo
+
 
 ---
 
