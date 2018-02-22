@@ -15,20 +15,21 @@ output:
 
 # Git es...
 
-- Git es uns sistema de control de versionado orinalmente diseñado para ayudar a grupos de desarrolladores a hacer trabajo colaborativo en
+- Git es uns sistema de control de versionado originalmente diseñado para ayudar a grupos de desarrolladores a hacer trabajo colaborativo en
 proyectos grandes de desarrolo de software.
 
 - Git ha sido tomado por la comunidad de ciencia de datos redefiniendo el proposito. Lo usamos para manejar la colección de archivos que hacen a un proyecto.
 <!-- datos, figuras, reportes, codigo fuente -->
 ---
 
-# GitHub
+# Porqué GitHub? 
 
 - Brinda un lugar en internet para tu proyecto basado en Git.
 
 - Es un canal de distribución para manejar tu proyecto de Git.
 
 - Colaborar, otras personas puden ver el proyecto, sincronizarlo con el tuyo y hacer cambios.
+
 ---
 
 # Que necesitamos
@@ -66,16 +67,24 @@ proyectos grandes de desarrolo de software.
 - Colaboradores predeterminados y hasta externos
 ---
 
-# Otros
+# Especiales de GitHub
 
 - **Issues**
+ Es una lista de cosas, bugs, pedidos de cambios, comentarios, etc.  
+Integrados con emails, pueden asignarse a personas y ver el progreso.  
+Integrado con los `commits` permite registrar que los cambios de un commit resuelven el problema.  
 
 - **Pull requests**
+Permite que un proyecto tenga múltiples ramas de desarrollo independiente.
+Algunas ramas pueden pegarse a la versión de desarrollo original.
+
+ Un "pull request" es una propuesta formal de proponer cambios puede estar relacionados a la solucion de un problema (issue).
+---
 
 
 # Actividad grupos
 
 
-
+---
 
 
