@@ -98,7 +98,7 @@ library(ggthemes)
 ---
 
 
-# Bibliografía opcional
+# Bibliografía sugerida
 
 
 - Wickham, H. ggplot2: elegant graphics for data analysis. Springer, 2016.[disponible para compilar en Github](https://github.com/hadley/ggplot2-book)
@@ -106,15 +106,23 @@ library(ggthemes)
 - Wickham, H. Advanced r. CRC Press, 2014. [disponible online](http://adv-r.had.co.nz)
 
 - Xie, Yihui. Dynamic Documents with R and knitr. Vol. 29. CRC Press, 2015.
+
+-  Bryan, Jenny. Happy Git and GitHub for the useR [disponible online](http://happygitwithr.com/big-picture.html)
+
+- Gillespie, Collin., Lovelace, Robin. Efficient R programming. [disponible online](https://bookdown.org/csgillespie/efficientR/)
 ---
 
 # Cómo obtener ayuda
 
-- **Google** es tu amigo! (ej: copia el mensaje de error )
-- **Stackoverflow** incluir etiquetas como [r], [ggplot2] o lo que sea que estas buscando
-- Cómo hacer un ejemplo reproducible,  [Stackoverflow](https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example/5963610#5963610)
+- **Google** es tu amigo! (ej: copia el mensaje de error).
+
+- **Stackoverflow** incluir etiquetas como [r], [ggplot2] o lo que sea que estás buscando.[web](https://stackoverflow.com)
+
+- Cómo hacer un ejemplo reproducible para obten mejor entendimiento de tu problema,  [Stackoverflow](https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example/5963610#5963610)
 
 - Leer el material del curso, preguntar en foros
+
+
 ---
 
 # Ejemplos de lo que vamos a aprender!
