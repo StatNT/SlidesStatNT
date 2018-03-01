@@ -82,7 +82,10 @@ Algunas ramas pueden pegarse a la versión de desarrollo original.
 ---
 
 
-# Actividad grupos
+# Tu turno!
+
+1. Hacer una cuenta de GitHub
+2. Armar un proyecto y agregar colaboradores
 
 
 ---
