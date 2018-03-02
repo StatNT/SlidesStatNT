@@ -1,0 +1,55 @@
+---
+title: "Personal Intro"
+subtitle: ''
+author: "Natalia da Silva (natalia@iesta.edu.uy, @pacocuak)"
+date: ""
+output:
+  xaringan::moon_reader:
+    css: ["myslides", "rladies-font.css"]
+    self_contained: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Formación 
+
+- Licenciatura en Estadística, UDELAR (Uruguay) 2008
+
+- Licenciatura en Economía, UDELAR (Uruguay) 2009
+
+- Master en Estadística, Iowa State University  2014 
+
+- Doctorado en Estadiística, Iowa State University 2017
+
+---
+
+## ISU Campus
+
+<img src="campus.png" height="200px" width="560px" />
+
+<img src="campus2.png" height="200px" width="300px" />
+---
+
+## Temas de interés
+
+- Estadística multivariada
+
+- Metodos de agregación, boosting, bagging, random forest 
+
+- Estadística computacional
+ 
+- Visualización Estadística
+
+Más info en: http://natydasilva.com
+---
+
+
+
