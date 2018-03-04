@@ -1,6 +1,6 @@
 ---
 title: "Nuevas tecnologías para el análisis astadístico de datos"
-subtitle: 'Clase 1: Introducción'
+subtitle: 'Clase 1: Presentación del Curso'
 author: "Natalia da Silva (natalia@iesta.edu.uy, @pacocuak)"
 date: ""
 output:
@@ -34,16 +34,36 @@ library(ggthemes)
 
 # Bienvenidos!
 
-- __Prof__: [Natalia da Silva](http://ndasilva.public.iastate.edu) 
---
+
+- __Profe STAT_NT__: [Natalia da Silva](http://natydasilva.com) 
+
+ Mis temas de interés: 
+
+- Estadística multivariada
+
+- Metodos de agregación, boosting, bagging, random forest 
+
+- Estadística computacional
+ 
+- Visualización Estadística
+---
+
+
+## ISU CAMPUS 
+
+<img src="campus.png" height="200px" width="560px" />
+
+<img src="campus2.png" height="200px" width="300px" />
+---
+
+
+
+# Curso
 
 - __Computación__: R and RStudio
---
 
-- __Materiales__: Eva, pruebas online ; [GitHub](https://github.com/natydasilva) materiales
 
----
-# Curso
+- __Materiales__: Eva,  [GitHub](https://github.com/natydasilva) 
 
 - __Clases:__ 2 veces por semana en el laboratorio
 
@@ -71,9 +91,10 @@ library(ggthemes)
 ---
 
 # Contenido del Curso
+
 - R y RStudio IDE
 
--	Generar reportes con código en R usando R Markdown
+-	Generar reportes con código en R usando RMarkdown
  
 - Control de versiones usando Git y trabajo colaborativo
 
@@ -139,4 +160,17 @@ library(ggthemes)
 - [paquetes](https://cran.r-project.org)
 
 ---
+
+# Tarea para hoy!!!
+
+-[Google form](https://docs.google.com/forms/d/1CuwhpQC9t2jd4aKKUnCMk5f_P1v80K87OmZmHIDhyV8/edit)
+
+- Actualizar  R (version 3.4.3) y RStudio (1.1.423) 
+
+- Hacerte una cuenta de twitter y seguir a @STAT_NT
+
+-  Mandame una tweet a @STAT_NT con las fotos que muestren tu consola con la versión actualizada de R y RStudio.
+
+- Usá `version` y `RStudio.Version()`
+
 
