@@ -83,7 +83,7 @@ library(ggthemes)
 
 # Objetivo del Curso
 
-- Introducir al estudiante a nuevas teconologías para el análisis estadístico de datos
+- Introducir al estudiante a nuevas tecnologías para el análisis estadístico de datos
 
 - Alfabetización en programación para la investigación reproducible
 
@@ -161,16 +161,21 @@ library(ggthemes)
 
 ---
 
-# Tarea para hoy!!!
 
--[Google form](https://docs.google.com/forms/d/1CuwhpQC9t2jd4aKKUnCMk5f_P1v80K87OmZmHIDhyV8/edit)
+
+# Tarea para el Lunes (8M no hay clase)
 
 - Actualizar  R (version 3.4.3) y RStudio (1.1.423) 
 
 - Hacerte una cuenta de twitter y seguir a @STAT_NT
 
--  Mandame una tweet a @STAT_NT con las fotos que muestren tu consola con la versión actualizada de R y RStudio.
+- Seguir a tres referentes de la comunidad R
+
+-  twitteá a @STAT_NT con las fotos que muestren tu consola con la versión actualizada de R y RStudio.
 
 - Usá `version` y `RStudio.Version()`
+---
 
+# Tarea para hoy!
 
+- Completar [Google form](https://docs.google.com/forms/d/1CuwhpQC9t2jd4aKKUnCMk5f_P1v80K87OmZmHIDhyV8/edit)
