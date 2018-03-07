@@ -264,13 +264,5 @@ here("R&RStudioIDE",  "datos.txt")
 ```
 ---
 
-# Tarea para hoy!!!
 
-- Actualizar  R (version 3.4.3) y RStudio (1.1.423) 
-
-- Hacerte una cuenta de twitter y seguir a @STAT_NT
-
--  Mandame una tweet a @STAT_NT con las fotos que muestren tu consola con la versión actualizada de R y RStudio.
-
-- Usá `version` y `RStudio.Version()`
 
