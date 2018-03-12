@@ -1,18 +1,27 @@
 ---
-title: "Nuevas tecnologías para el análisis astadístico de datos"
-subtitle: 'R y RStudio IDE'
-author: "Natalia da Silva (natalia@iesta.edu.uy, @pacocuak)"
-date: ""
-output:
-  xaringan::moon_reader:
-    css: ["myslides", "rladies-font.css"]
-    self_contained: false
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
+title: <span style="color:#88398A">R & RStudio IDE</span>
+author: <span style="color:#88398A"> <font size="6">Natalia da Silva, \@STA_NT</span></font>
+
+date: <span style="color:#88398A"> 11 de Marzo, 2018
+output: ioslides_presentation
+logo: logoclass.png
+widescreen: no
 ---
-# R es ...
+
+ <style>
+ .title-slide {
+     background-image: url(logo.png);
+     background-repeat: no-repeat;
+     padding:40px;
+     background-position: 90% 80%;
+     background-size: 200px 200px;
+   }
+   </style>
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## <span style="color:#88398A">R es ...</span>
 
   - Un lenguaje y ambiente para hacer estadística computacional y gráfica
   - Es el software más comunmente utilizado en la sciencia de datos [kdnuggets](https://www.kdnuggets.com/2017/05/poll-analytics-data-science-machine-learning-software-leaders.html) 
@@ -20,9 +29,9 @@ output:
   - **Extensible:**  más de 12000 contribuciones de paquetes en CRAN (The Comprehensive R Archive Network)! Bioconductor tiene más de 1400 paquetes y hay otros disponibles en github.
   - **Potente:** Usando las herramientas adecuadas se puede hacer el trabajo más rápido y mejor
   - **Flexible:** pequeños cambios en la tarea se logran con pequeños cambios en el código que está disponible para el usuario 
----
 
-# Qué puede hacer R 
+
+##  <span style="color:#88398A"> Qué puede hacer R </span>
 
 - Gráficos, estadística, machine learning, etc. 
 
@@ -31,9 +40,9 @@ output:
 - Programación alfabetizada (reportes dinámicos) 
 
 - Aplicaciones web (páginas web, blogs, shiny apps)
----
 
-# Cómo instalar R
+
+## <span style="color:#88398A"> Cómo instalar R </span>
 
 R se actualiza dos veces al año y es recomendable tenerlo actualizado
 
@@ -44,9 +53,9 @@ R se actualiza dos veces al año y es recomendable tenerlo actualizado
 - Seleccionar un mirror para bajar R (el más cercano geográficamente no siempre es el mejor)
 
 - Bajar e instalar R para el sistema operativo de tu computadora 
----
 
-# IDE
+
+## <span style="color:#88398A"> IDE </span>
 
 Recomendable usar un IDE (entorno de desarrollo integrado) para facilitar el desarrollo de código en R entre otros.
 
@@ -57,18 +66,18 @@ IDE ejemplos:
 - [RStudio](https://www.rstudio.com) 
 
 En esta clase vamos a usar RStudio
----
 
-# RStudio  
 
- RStudio es una empresa que desarrolla herramientas gratis y abiertas para R.
+<!-- ## <span style="color:#88398A"> RStudio  </span> -->
 
- Julie Lowndes:
- 
-''If R were an airplane, RStudio would be the airport, providing many, many supporting services that make it easier for you, the pilot, to take off and go to awesome places. Sure, you can fly an airplane without an airport, but having those runways and supporting infrastructure is a game-changer.''
----
+<!--  RStudio es una empresa que desarrolla herramientas gratis y abiertas para R. -->
 
-# RStudio IDE 
+<!--  Julie Lowndes: -->
+
+<!-- ''If R were an airplane, RStudio would be the airport, providing many, many supporting services that make it easier for you, the pilot, to take off and go to awesome places. Sure, you can fly an airplane without an airport, but having those runways and supporting infrastructure is a game-changer.'' -->
+
+
+## <span style="color:#88398A"> RStudio IDE </span>
 IDE: Integrated Development Environment for R
 
 Porqué usarlo ?
@@ -88,24 +97,23 @@ Porqué usarlo ?
 - Facilita una rápida navegación a archivos y funciones
 
 - Hace sencillo comenzar un nuevo proyecto o encontrar proyectos ya existentes
----
 
 
-# Cómo instalar RStudio
+## <span style="color:#88398A"> Cómo instalar RStudio </span>
 
 - Ir a  https://www.rstudio.com/
 
 - Mouse sobre Products y seleccionar RStudio
 
 - Seleccionar y bajar  RStudio Desktop 
----
 
-# RStudio IDE
+
+## <span style="color:#88398A"> RStudio IDE </span>
 
 <img src="rstudio.pdf" height="500px" width="800px" />
----
 
-# RStudio IDE, 1 Panel de Código
+
+## <span style="color:#88398A"> RStudio IDE, 1 Panel de Código</span>
 <img src="rstudio.pdf" height="100px" width="160px" />
 
 - Estación de acoplamiento de múltiples archivos
@@ -115,30 +123,31 @@ Porqué usarlo ?
 - Debugging
 
 
----
 
-# RStudio IDE, 1 Panel de Código
+
+## <span style="color:#88398A"> RStudio IDE, 1 Panel de Código</span>
 
 <img src="codpane.pdf" height="500px" width="800px" />
----
 
-#  RStudio IDE, 1 Panel de Código
-<img src="codpane.pdf" height="100px" width="160px" />
-- 1 Pestaña de trabajo actual, nombre del archivo y extensión.
-- 2 Ventana independiente para el archivo actual.
-- 3 Guardar el archivo actual.
-- 4 Chequeo ortográfico. 
-- 5 Buscar y Reemplazar.
-- 6 Compila el documento interactivo, ejemplo Rmd, Rnw.
-- 7 Opciones para el documento.
-- 8 Insertar chunks de diferentes lenguajes
-- 9 Moverme en el documento
-- 10 Ejecutar todo el código con el comando .
-- 11 Publicar el archivo online.
 
----
+## <span style="color:#88398A">  RStudio IDE, 1 Panel de Código </span>
+<img src="codpane.pdf" height="80px" width="160px" />
 
-# RStudio IDE, 1 Panel de Código
+ 1. Pestaña de trabajo actual, nombre del archivo y extensión.
+ 2. Ventana independiente para el archivo actual.
+ 3. Guardar el archivo actual.
+ 4. Chequeo ortográfico. 
+ 5. Buscar y Reemplazar.
+ 6. Compila el documento interactivo, ejemplo Rmd, Rnw.
+ 7. Opciones para el documento.
+ 8. Insertar chunks de diferentes lenguajes
+ 9. Moverme en el documento
+ 10. Ejecutar todo el código con el comando .
+ 11. Publicar el archivo online.
+
+
+
+## <span style="color:#88398A"> RStudio IDE, 1 Panel de Código </span>
 
 Acceso rápido a
 ```{r, echo=FALSE,message=FALSE,warning=FALSE, results='asis'}
@@ -149,22 +158,22 @@ data_frame(
   Uso = c("Opción autocompletado de código","Formatea código de R seleccionado ","Ejecuta  las líneas seleccionadas ","Salva el archivo" )
 ) %>% xtable() %>% print.xtable(type = "html")
 
-
-
 ```
 
 usuarios mac  [command] en vez de [control]
----
 
-# RStudio IDE, 2 Panel de Consola
+
+## <span style="color:#88398A"> RStudio IDE, 2 Panel de Consola </span>
 
 **2 Panel de Consola**
+
 - Resaltado en linea/completado de código
+
 - Búsqueda de comandos recientes
 
----
 
-# Otros componentes de RStudio IDE
+
+## <span style="color:#88398A"> Otros componentes de RStudio IDE</span>
 <img src="rstudio.pdf" height="100px" width="160px" />
 
  **3 Panel de entorno**
@@ -175,9 +184,9 @@ usuarios mac  [command] en vez de [control]
 - Grápicos
 - Documentación de R 
 - Sistema de navegación/acceso de archivos
----
 
-# Hábitos de trabajo vs productos
+
+## <span style="color:#88398A"> Hábitos de trabajo vs productos </span>
 
 Cosas que hacemos por gusto personal:
 
@@ -194,9 +203,9 @@ Los productos:
 
 IMPORTANTE: No ates nada de tus hábitos (ej: "../pepapig") en tu producto.
 
----
 
-# setwd()
+
+## <span style="color:#88398A"> setwd() </span>
 
 ¿Para qué sirve esta función?
 
@@ -204,9 +213,9 @@ IMPORTANTE: No ates nada de tus hábitos (ej: "../pepapig") en tu producto.
 
 `setwd("/Users/natydasilva/jajajuas")`
 
----
 
-# NO USAR `setwd()`!!!
+
+## <span style="color:#88398A"> NO USAR `setwd()`!!! </span>
 
  Hace tu código frágil, y no reproducible
  
@@ -216,9 +225,9 @@ IMPORTANTE: No ates nada de tus hábitos (ej: "../pepapig") en tu producto.
 
 - Lo  compartas.
 
----
 
-# Crear proyectos en R
+
+## <span style="color:#88398A"> Crear proyectos en R </span>
 
 
 - Organizar cada análisis de datos en un proyecto (Carpeta en tu compu que contine todos los archvos relevantes para tu trabajo particular)
@@ -227,15 +236,15 @@ IMPORTANTE: No ates nada de tus hábitos (ej: "../pepapig") en tu producto.
 
 - El código se escribe asumiendo que el directrio de trabajo queda fijado al directorio del proyecto, código reproducible.
 
----
 
-# ¿Porqué trabajar en proyectos?
+
+## <span style="color:#88398A"> ¿Porqué trabajar en proyectos? </span>
 
  Nos garantiza que el proyecto puede ser movido y el código aún funciona
 
----
 
-# Proyectos y el paquete `here` 
+
+## <span style="color:#88398A"> Proyectos y el paquete `here` </span>
 
 Para eliminar `setwd()`:
 
@@ -245,24 +254,24 @@ Para eliminar `setwd()`:
 
 - `here()` nos da la ruta relativa al directorio donde vive el proyecto.
 
----
 
 
-# `here()`
+
+## <span style="color:#88398A"> `here()` </span>
 
 
-```{r, message=FALSE,warning=FALSE}
+```{r, message=FALSE,warning=FALSE,echo=TRUE}
 library(here)
 here()
 
 ```
 
 Ruta a el archivo `datos.txt` en un subdirectorio
-```{r, message=FALSE,warning=FALSE}
+```{r, message=FALSE,warning=FALSE,echo=TRUE}
 
 here("R&RStudioIDE",  "datos.txt")
 ```
----
+
 
 
 
