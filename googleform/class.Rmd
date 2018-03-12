@@ -14,6 +14,8 @@ library(here)
 library(lubridate)
 ```
 
+
+
 <!-- # calcedad <- function(cumple, hoy=dmy("10/03/2018")) { -->
 <!-- # require(lubridate) -->
 <!-- #  -->
