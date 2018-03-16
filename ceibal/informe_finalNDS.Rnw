@@ -41,6 +41,7 @@ library(raster)
 library(ggplot2)
 library(rgdal)
 library(dplyr)
+library(ggmosaic)
 
 @
 
@@ -55,14 +56,11 @@ load(here::here("data", "CobStats2.RData"))
 
 \begin{table}[H]
 	\centering
-	
 	\begin{tabular}{||c||c|c|}
-		
-		
 		\hline 
-		\rule[-1ex]{0pt}{2.5ex} \cellcolor[rgb]{ .663,  .816,  .557} Matr?cula 2016 & \cellcolor[rgb]{ .663,  .816,  .557} ANEP* & \cellcolor[rgb]{ .663,  .816,  .557} CEIBAL (UE)** \\ 
+		\rule[-1ex]{0pt}{2.5ex} \cellcolor[rgb]{ .663,  .816,  .557} Matrícula 2016 & \cellcolor[rgb]{ .663,  .816,  .557} ANEP* & \cellcolor[rgb]{ .663,  .816,  .557} CEIBAL (UE)** \\ 
 		\hline 
-		\rule[-1ex]{0pt}{2.5ex} 1? CES-Ciclo b?sico &  & 40.293 \\ 
+		\rule[-1ex]{0pt}{2.5ex} 1ero CES-Ciclo básico &  & 40.293 \\ 
 		\hline 
 
 	\end{tabular} 
@@ -160,12 +158,10 @@ En el cuadro \ref{tab:VAR} de la sección \ref{VD} se va a detallar las variable
 	\textbf{Predic\_16\_17.RData}}
 \end{table}%
 
-
-
 A partir de dichas variables disponibles, se construyeron otras, las mismas se detallan a continuación:
 
 \begin{itemize}
-\item \textbf{Extra-edad Leve}: Se considera que el alumno tiene extra-edad leve cu?ndo nace antes del 30 de abril de 2003 . Es decir un año más de la edad normativa para dicha generación.
+\item \textbf{Extra-edad Leve}: Se considera que el alumno tiene extra-edad leve cuando nace antes del 30 de abril de 2003 . Es decir un año más de la edad normativa para dicha generación.
 
 \item \textbf{Extra-edad Fuerte}: Se considera que el alumno tiene extra-edad fuerte cuando nace antes del 30 de abril de 2002. Es decir dos años más de la edad normativa para dicha generación.
 
@@ -213,6 +209,7 @@ theme_opts <- list(theme(panel.grid.minor = element_blank(),
 @
 
 \begin{figure}[h]
+\begin{center}
 <<pl, warning=FALSE, message=FALSE,echo=FALSE>>=
 ggplot() + 
   geom_polygon(data =uystates_df, aes(x = long, y = lat, group = group, fill =
@@ -220,10 +217,9 @@ ggplot() +
   theme(aspect.ratio=1)+
   scale_fill_gradient2(trans="log", breaks= c(1e2, 1e3, 1e4), midpoint = log(1e3)) +
   theme_opts 
-
-
 @
 \caption{Composición de la matrícula 2016 de primer año de CES según departamento}
+\end{center}
 \end{figure}
 
 EL MAPA SUPLANTA LA TABLA \ref{tab:Dep}
@@ -259,23 +255,25 @@ EL MAPA SUPLANTA LA TABLA \ref{tab:Dep}
 	\label{tab:Dep}%
 \end{table}%
 
-
-
 \subsection{Trnasición educativa entre 2016-2017}
 En esta sección se va a estudiar la transición educativa de los 40.233 alumnos matriiculados en primero de CES en 2016 \footnote{60 alumnos no se tuvieron en cuenta ya que si estaban en el set de datos \textbf{Marco UE 2016} pero no se encontraron en el set de datos \textbf{Trayectorias}}, de forma tal de observar en que situación se encuentran en 2017. En el cuadro \ref{tab:Abandono} se muestra la cantidad de alumnos que estaban cursando primero de CES en 2016 y en 2017 no se anotaron en el sistema de educación pública.
 
 \begin{figure}[h]
-<<abandono, warning=FALSE,message=FALSE,echo=FALSE>>=
+\begin{center}
+<<abandono, warning=FALSE,message=FALSE,echo=FALSE, fig.height=5, fig.width=6>>=
 
 Predic_16_17 %>% mutate(Abandono = factor(Abandono, labels = c("No", "Si"))) %>% 
   ggplot() + geom_bar(aes( x = Abandono, y = (..count..)/sum(..count..), fill = Abandono)) +
        scale_y_continuous(labels=scales::percent)+
 scale_fill_brewer(palette = "Dark2") +
     geom_text(aes( x = Abandono,label = scales::percent((..count..)/sum(..count..)),
-                   y= (..count..)/sum(..count..)), stat= "count", vjust = -.5) + labs(x = "Abandono", y = "Porcentaje", fill = "Abandono", title = "Porcentaje de abandono de 2016 a 2017") 
+                   y= (..count..)/sum(..count..)), stat= "count", vjust = -.5) + labs(x = "Abandono", y = "Porcentaje", fill = "Abandono") 
 @
+\caption{Porcentaje de abandono de 2016 a 2017}
+\end{center}
+\label{propaba}
 \end{figure}
-GRAFICO DE BARRAS REMPLAZA FIGURA \ref{tab:Abandono}
+GRAFICO DE BARRAS REMPLAZA TABLA \ref{tab:Abandono}
 
 
 \begin{table}[H]
@@ -315,18 +313,19 @@ El 93\% de la matrícula que sigue en el sistema educativo público en el 2017 s
 	\label{Destino}
 \end{table}
 
-
+GRAFICO DE BARRAS REMPLAZA TABLA \ref{Destino}
 \begin{figure}[h]
-<<destinos,warning=FALSE,message=FALSE,echo=FALSE>>=
+\begin{center}
+<<destinos, warning = FALSE, message = FALSE, echo = FALSE, fig.height = 5, fig.width = 6>>=
 Predic_16_17 %>% mutate(G17 = substr(Grupo_UE_2017,1,3)) %>%
   dplyr::filter(!is.na(G17) ) %>%
   mutate(G17 = factor(G17, labels = c("1ro", "2do","CBT","FPB"))) %>%
-  ggplot() + geom_bar(aes( x = G17, y = (..count..)/sum(..count..), fill = G17)) +
-       scale_y_continuous(labels=scales::percent)+
+  ggplot() + geom_bar(aes( x = G17, y = (..count..)/sum(..count..), fill = G17)) + scale_y_continuous(labels =scales::percent)+
 scale_fill_brewer(palette = "Dark2") +
-    geom_text(aes( x = G17,label = scales::percent((..count..)/sum(..count..)),
-                   y= (..count..)/sum(..count..)), stat= "count", vjust = -.5) + labs(x = "Destinos", y = "Porcentaje", fill = "Destino", title = "Porcentaje de alumnos por destino que siguen matriculados desde 2016 a 2017 ")
+    geom_text(aes( x = G17,label = scales::percent((..count..)/sum(..count..)), y = (..count..)/sum(..count..)), stat = "count", vjust = -.5) + labs(x = "Destinos", y = "Porcentaje", fill = "Destino" )
 @
+\caption{Porcentaje de alumnos por destino que siguen matriculados desde 2016 a 2017 }
+\end{center}
 \end{figure}
 
 
@@ -338,94 +337,90 @@ El primer análisis que se va a realizar es evaluar que todos los grupos tengan 
 
 Para esto se creo una variable que se llama \textbf{Predominio}. La misma es el porcentaje más grande de alumnos (del mismo grupo) que tienen la misma cobertura. Es decir si a un grupo X al 90\% de los alumnos le pasan 20 veces la lista, al 5\% le pasan 15 veces y al 5\% restante le pasan solo una vez, la variable \textbf{Predominio} tiene el valor 90\% (el porcentaje más grande de alumnos con la misma cobertura), en el gráfico \ref{fig:pred} se ilustra el comportamiento de dicha variable para cada uno de los grupos en un histograma.
 
-\end{document}
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=0.7\linewidth]{Cobertura}
+% 	\caption{Predominio de la cobertura}
+% 	\label{fig:pred}
+% \end{figure}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{Cobertura}
-	\caption{Predominio de la cobertura}
-	\label{fig:pred}
+\begin{figure}[h]
+\begin{center}
+<<r, warning = FALSE, message = FALSE, echo = FALSE, fig.width = 5, fig.height = 5>>=
+ggplot(COB_stats2, aes(x=Predominio, y=..density..)) +
+  geom_histogram(bins = 30,col="grey")+
+  labs(x = "Frecuencia",y="Densidad")
+@
+\caption{Máxima frecuencia de la cobertura por grupo}
+\end{center}
 \end{figure}
 
-Lo esperable es que todos los alumnos del grupo tengan la misma cobertura es decir que el predominio sea 100\%. Hay 560 grupos que cumplen con el valor esperado los mismos est?n representados en la barra m?s contra la derecha en el histograma.
+Lo esperable es que todos los alumnos del grupo tengan la misma cobertura es decir que el predominio sea 100\%. Hay 560 grupos que cumplen con el valor esperado los mismos están representados en la barra más contra la derecha en el histograma.
 
-Si bien no todos los grupos est?n en la situaci?n ideal, en el histograma queda representado que en la mayor?a de los grupos, m?s del 80\% de sus alumnos tienen la misma cobertura.
+Si bien no todos los grupos están en la situación ideal, en el histograma queda representado que en la mayoría de los grupos, más del 80\% de sus alumnos tienen la misma cobertura.
 
+Hay 1.437 grupos (de un total de 1.513, es decir un 95\%) en el que el 80\% o más de los alumnos tiene la misma cobertura. Por lo que se concluye que la cobertura a nivel de grupos es ``aceptable''. En lo que sigue del análisis se va tomar en cuenta  dicho 95\% de los grupos que tienen una cobertura intra-grupos homogénea, dichos grupos tienen 37.849 alumnos. 
 
-
-Hay 1.437 grupos (de un total de 1.513, es decir un 95\%) en el que el 80\% o m?s de los alumnos tiene la misma cobertura. Por lo que se concluye que la cobertura a nivel de grupos es ``aceptable''. En lo que sigue del an?lisis se va tomar en cuenta  dicho 95\% de los grupos que tienen una cobertura inra-grupos homog?nea, dichos grupos tienen 37.849 alumnos. 
-
-
-
-
-
-\vspace{2cm}
 Se va a analizar como es la \textbf{cobertura} del pasaje de lista en linea, la misma no es igual para todos los centros, es decir hay algunos que tienen mayor cobertura que otros. 
 
+En el gráfico \ref{fig:cobertura} se realiza un boxplot de la variable cobertura en los 57 días que se está evaluando. La misma se realizó para el 95\% de los grupos que tienen una cobertura intra-grupos homogénea.
 
-En el gr?fico \ref{fig:cobertura} se realiza un boxplot de la variable cobertura en los 57 d?as que se est? evaluando. La misma se realiz? para el 95\% de los grupos que tienen una cobertura intra-grupos homog?nea.
+\begin{figure}[h]
+\begin{center}
+<<warning=FALSE, echo=FALSE,message=FALSE,fig.width=4,fig.height=4>>=
+centro <-  COB_stats2 %>% filter(Predominio>=0.80) %>% dplyr::select(Centro_Grupo)
+Predic_16_17 %>% mutate(Centro_Grupo, factor(Centro_Grupo))%>%
+  filter(Centro_Grupo %in% centro[,1]) %>%
+  ggplot(aes(x = "", y = coberturaT)) + geom_boxplot()
 
-
-
-
-
-\begin{figure} [H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{cobertura2}
-	\caption{Cobertura del pasaje de lista en linea}
+@
+\caption{Cobertura del pasaje de lista en linea}
 	\label{fig:cobertura}
+	\end{center}
 \end{figure}
 
+% \begin{figure} [H]
+% 	\centering
+% 	\includegraphics[width=0.5\linewidth]{cobertura2}
+% 	\caption{Cobertura del pasaje de lista en linea}
+% 	\label{fig:cobertura}
+% \end{figure}
+
+Los nivele de cobertura, para dicha población, son buenos. Como se representa en el boxplot de la figura \ref{fig:cobertura}, al 75\% de los alumnos pertenecientes a dicha población se le pasó 47 días o más la lista (de los 57 días en los que se está analizando). Por lo que se entiende que es una buena cobertura para realizar el análisis.\\ 
+
+Para realizar el modelo se van a tomar los grupos que tienen una cobertura homogénea (es decir aquellos que más del 80\% de los alumnos del grupo tienen la misma cobertura) y ademas que dicho valor supere los 47 días. En esta situación hay 28.232 alumnos (que pertenecen a 1.095 grupos diferentes). En lo que resta de este análisis se va a trabajar con esa población de estudio.
 
 
-Los nivele de cobertura, para dicha poblaci?n, son buenos. Como se representa en el boxplot de la figura \ref{fig:cobertura}, al 75\% de los alumnos pertenecientes a dicha poblaci?n se le pas? 47 d?as o m?s la lista (de los 57 d?as en los que se est? analizando). Por lo que se entiende que es una buena cobertura para realizar el an?lisis.\\ 
-
-Para realizar el modelo se van a tomar los grupos que tienen una cobertura homog?nea (es decir aquellos que m?s del 80\% de los alumnos del grupo tienen la misma cobertura) y ademas que dicho valor supere los 47 d?as. En esta situaci?n hay 28.232 alumnos (que pertenecen a 1.095 grupos diferentes). En lo que resta de este an?lisis se va a trabajar con esa poblaci?n de estudio.
-
-
-
-
-
-
-\newpage
 \section{Analisis exploratorio de las covariables}\label{cap3}
 
-\subsubsection{Selecci?n de la poblaci?n de estudio}
-\textbf{Se utilizar? una porci?n de la totalidad de los estudiantes matriculados en primero de CES en 2016}. Un factor importante a la hora de evaluar el abandono, el cu?l se observ? en el an?lisis exploratorio, son las inasistencias del alumno. Por lo que se entiende que la cobertura del pasaje de lista en linea (de los estudiantes analizados) tiene que ser buena.
+\subsubsection{Selección de la población de estudio}
+\textbf{Se utilizará una porción de la totalidad de los estudiantes matriculados en primero de CES en 2016}. Un factor importante a la hora de evaluar el abandono, el cuál se observa en el análisis exploratorio, son las inasistencias del alumno. Por lo que se entiende que la cobertura del pasaje de lista en linea (de los estudiantes analizados) tiene que ser buena.
 
-Por esta raz?n el criterio para la elecci?n de los estudiantes, con los que se va a inferir el modelo predictivo, es seleccionar aquellos que tengan una buena cobertura de pasaje de lista en linea.\\
+Por esta razán el criterio para la elección de los estudiantes, con los que se va a inferir el modelo predictivo, es seleccionar aquellos que tengan una buena cobertura de pasaje de lista en linea.\\
 
+Como se expuso en el análisis descriptivo de un total de 1.513 grupos, hay 1.437 (el 95\%) que tienen una cobertura homogenea (es decir, todos los alumnos del grupo tienen la misma cobertura). De dichos grupos 1.095 tienen una cobertura mayor a 47 días. Los mismos están compuestos por 28.232 alumnos y son los que se van a considerar en el análisis predictivo.\\ 
 
-
-Como se expuso en el an?lisis descriptivo de un total de 1.513 grupos, hay 1.437 (el 95\%) que tienen una cobertura homog?nea (es decir, todos los alumnos del grupo tienen la misma cobertura). De dichos grupos 1.095 tienen una cobertura mayor a 47 d?as. Los mismos est?n compuestos por 28.232 alumnos y son los que se van a considerar en el an?lisis predictivo.\\ 
-
-\begin{figure}[H]
-	\centering
-	\begin{tikzpicture}[thick]
-	\draw (4,-3) rectangle (-2,2) node[below right] {1.513 grupos};
-	
-	\draw (1,-0.5) [fill=cyan]  circle (1.8) node[above,shift={(0.4,0.7)}] {};
-	
-	
-	\draw (1,-0.5) circle (2.3) node[above,shift={(0,1.8)}] {};
-	
-	
-	\node at (1,1.4) {1.437 grupos};
-	\node at (1.1,-.4) {1.095 grupos};
-	%\node at (1.1,-.8) {28.566 alumnos};
-	
-	\end{tikzpicture}
-	\caption{Selecci?n de grupos para incluir en el modelo predictivo}
-	%\label{fig:Selec}
-\end{figure}
+SAQUE LA FIGURA DE SELECCION DE GRUPOS PARA INCLUIR EN EL MODELO PREDICTIVO PORQUE NO DICE NADA
+% 
+% \begin{figure}[H]
+% 	\centering
+% 	\begin{tikzpicture}[thick]
+% 	\draw (4,-3) rectangle (-2,2) node[below right] {1.513 grupos};
+% 	\draw (1,-0.5) [fill=cyan]  circle (1.8) node[above,shift={(0.4,0.7)}] {};
+% 	\draw (1,-0.5) circle (2.3) node[above,shift={(0,1.8)}] {};
+% 	\node at (1,1.4) {1.437 grupos};
+% 	\node at (1.1,-.4) {1.095 grupos};
+% 	%\node at (1.1,-.8) {28.566 alumnos};
+% 	\end{tikzpicture}
+% 	\caption{Selecci?n de grupos para incluir en el modelo predictivo}
+% 	%\label{fig:Selec}
+% \end{figure}
 
 
-\newpage
-Primero se va a evaluar como es la transici?n entre 2016 y 2017 para dicha poblaci?n, es decir cuantos alumnos abandonan y cuantos siguen matriculados en 2017.\\
+Primero se va a evaluar como es la transición entre 2016 y 2017 para dicha población, es decir cuantos alumnos abandonan y cuantos siguen matriculados en 2017.\\
 
 \begin{table}[H]
 	\centering
-	
 	\begin{tabular}{|c|c|c|}
 		\hline
 		\rowcolor[rgb]{ .776,  .878,  .706}		No Abandona & Abandona & Total \\
@@ -435,41 +430,88 @@ Primero se va a evaluar como es la transici?n entre 2016 y 2017 para dicha pobla
 		94,0\% & 6,0\% & 100,0\% \\
 		\hline
 	\end{tabular}%
-	
-	\caption{Cantidad de alumnos de la matr?cula que abandonaron de 2016 a 2017}
+	\caption{Cantidad de alumnos de la matrícula que abandonaron de 2016 a 2017}
 	\label{tab:Abandono2}%
 \end{table}%
 
-La proporci?n de alumnos que abandonan y los que no, tiene un comportamiento muy similar al de la matr?cula total que se compone de la siguiente manera:
+ESTA FIGURA REMPLAZA \ref{tab:Abandono2}
 
-\begin{table}[H]
-	\centering
-	
-	\begin{tabular}{|c|c|c|}
-		\hline
-		\rowcolor[rgb]{ .776,  .878,  .706}		No Abandona & Abandona & Total \\
-		\hline
-		37.535 & 2.698 & 40.233 \\
-		\hline
-		93,0\% & 7,0\% & 100,0\% \\
-		\hline
-	\end{tabular}%
-	
-	\caption{Cantidad de alumnos de la matr?cula que abandonaron de 2016 a 2017}
-	\label{tab:Aband2}%
-\end{table}%
+\begin{figure}[h]
+\begin{center}
+<<datpr, echo=FALSE, warning = FALSE, message = FALSE, fig.height = 5, fig.width = 6>>=
 
+Cg <- COB_stats2 %>% filter(Predominio>0.8 & CobPred>47) %>% dplyr::select(Centro_Grupo) 
 
+Predic_16_17 %>% filter(Centro_Grupo%in%factor(Cg[,1])) %>% filter(coberturaT>47)  %>% 
+  mutate(Abandono = factor(Abandono) ) %>% ggplot() + geom_bar(aes( x = Abandono, y = (..count..)/sum(..count..), fill = Abandono)) + scale_y_continuous(labels=scales::percent)+
+scale_fill_brewer(palette = "Dark2") +
+    geom_text(aes( x = Abandono,label = scales::percent((..count..)/sum(..count..)), y = (..count..)/sum(..count..)), stat = "count", vjust = -.5) + labs(x = "Abandono", y = "Porcentaje", fill = "Abandono" )
 
+@
+\caption{Porcentaje de alumnos de la matrícula que abandonaron de 2016 a 2017 dentro de los que tienen cobertura homogenea y cuayo valor supere los 47 días}
+\end{center}
+\label{propabasub}
+\end{figure}
 
+La proporción de alumnos que abandonan y los que no, tiene un comportamiento muy similar al de la matrícula total mostrada previamente en la Figura \ref{propaba}.
+
+% 
+% TABLA \ref{Aband2}
+% \begin{table}[H]
+% 	\centering
+% 	\begin{tabular}{|c|c|c|}
+% 		\hline
+% 		\rowcolor[rgb]{ .776,  .878,  .706}		No Abandona & Abandona & Total \\
+% 		\hline
+% 		37.535 & 2.698 & 40.233 \\
+% 		\hline
+% 		93,0\% & 7,0\% & 100,0\% \\
+% 		\hline
+% 	\end{tabular}%
+% 	
+% 	\caption{Cantidad de alumnos de la matr?cula que abandonaron de 2016 a 2017}
+% 	\label{tab:Aband2}%
+% \end{table}%
+
+EL MOSAIC PLOT REMPLAZA A LA TABLA \ref{tab:Sexo}, 
+
+\begin{figure}[h]
+\begin{center}
+<<datprdd2, echo=FALSE, warning = FALSE, message = FALSE, fig.height = 5, fig.width = 6>>=
+
+Predic_16_17 %>% filter(Centro_Grupo%in%factor(Cg)) %>% filter(coberturaT>47)  %>% dplyr::select(Abandono, Sexo) %>%
+  mutate(Abandono = factor(Abandono) ) %>% group_by(Sexo, Abandono) %>% summarise(tot = n()) %>% ggplot() +
+    geom_mosaic(aes(weight=tot, x=product(Abandono), fill = Sexo)) +
+  scale_fill_brewer(palette = "Dark2") + labs(x = "Abandono", y = "", fill = "Género" )
+
+@
+\caption{Mosaicplot de Género vs Abandono. El ancho de cada categoría corresponde a la probabilidad asociada a abandono  mientras que la altura se corresponde con la probabilidad condicional de género dado abandono. En este caso estamos la informacioónde alumnos de la matrícula que abandonaron de 2016 a 2017 dentro de los que tienen cobertura homogenea y cuayo valor supere los 47 días por género}
+\end{center}
+\label{propabasub2}
+\end{figure}
+
+% 
+% 
+% \begin{figure}[h]
+% \begin{center}
+% <<datprdd, echo=FALSE, warning = FALSE, message = FALSE, fig.height = 5, fig.width = 6>>=
+% Predic_16_17 %>% filter(Centro_Grupo%in%factor(Cg[,1])) %>% filter(coberturaT>47)  %>% dplyr::select(Abandono, Sexo) %>%
+%   mutate(Abandono = factor(Abandono) ) %>% group_by(Sexo, Abandono) %>% summarise(tot = n()) %>% ggplot() +
+%     geom_mosaic(aes(weight=tot, x=product(Sexo), fill = Abandono)) +
+%   scale_fill_brewer(palette = "Dark2") + labs(x = "Género", y = "", fill = "Abandono" )
+% 
+% @
+% \caption{Mosaicplot de Género vs Abandono. El ancho de cada categoría corresponde a la probabilidad asociada a cada género mientras que la altura se corresponde con la probabilidad condicional de Abandono. En este caso estamos la información de alumnos de la matrícula que abandonaron de 2016 a 2017 dentro de los que tienen cobertura homogenea y cuayo valor supere los 47 días por género}
+% \end{center}
+% \label{propabasub}
+% \end{figure}
 
 En el cuadro \ref{tab:Sexo} se relaciona el sexo del alumno con el abandono.
 \begin{table}[htbp]
 	\centering
-	
 	\begin{tabular}{|c|c|c|c|}
 		\hline
-	\rowcolor[rgb]{ .776,  .878,  .706}	& \multicolumn{1}{l|}{No abandona} & \multicolumn{1}{l|}{Abandona} & Poblaci?n total \\
+	\rowcolor[rgb]{ .776,  .878,  .706}	& \multicolumn{1}{l|}{No abandona} & \multicolumn{1}{l|}{Abandona} & Población total \\
 		\hline
 		Femenino & 50,2\% & 43,2\% & 49,8\% \\
 		\hline
@@ -478,49 +520,80 @@ En el cuadro \ref{tab:Sexo} se relaciona el sexo del alumno con el abandono.
 		Total & 100,0\% & 100,0\% & 100\% \\
 		\hline
 	\end{tabular}%
-	\caption{Abandono seg?n Sexo}
+	\caption{Abandono según Sexo}
 	\label{tab:Sexo}%
 \end{table}%
 
 
-
 De los alumnos que abandonan, hay un porcentaje mayor de alumnos de sexo masculino. Mientras que de los alumnos que no abandonan hay un porcentaje mayor de alumnos del sexo femenino. Ambas diferencias no son muy pronunciadas.\\
 
-\newpage
- La variable \textbf{contexto sociocultural de los liceos} se creo en el marco de una investigaci?n reciente realizada por Ceibal y el IESTA. En la misma se propuso una metodolog?a que consiste en an?lisis de cluster, utilizada para inferir el contexto de los liceos a partir de la informaci?n de la procedencia de los alumnos. Esta informaci?n se basa en el contexto de la escuela de la que provienen los alumnos y la extra-edad de los mismos.
-
-Los resultados de dicha investigaci?n permitieron agrupar liceos con ``composiciones'' similares de procedencia. El resumen de dicha investigaci?n se muestra en el cuadro \ref{tabla:clusters} 
+ La variable \textbf{contexto sociocultural de los liceos} se creo en el marco de una investigación reciente realizada por Ceibal y el IESTA. En la misma se propuso una metodología que consiste en análisis de cluster, utilizada para inferir el contexto de los liceos a partir de la informaci?n de la procedencia de los alumnos. Esta información se basa en el contexto de la escuela de la que provienen los alumnos y la extra-edad de los mismos.
+ 
+Los resultados de dicha investigación permitieron agrupar liceos con ``composiciones'' similares de procedencia. El resumen de dicha investigación se muestra en el cuadro \ref{tabla:clusters} 
 	\begin{table}[H]
 	\centering
 	\begin{tabular}{|p{2cm}|p{12cm}|}
 		\hline
 \rowcolor[rgb]{ .776,  .878,  .706}		Grupo & Caracterizaci?n \\
 		\hline \hline
-		Cl?ster 1 & Se  compone de 45  liceos que concentran 26.675 alumnos. Donde la mayor?a de los alumnos de 1? provienen  del \textbf{Quintil 1} (m?s critico) (78\%) y la mitad  presentan extraedad.\\
+		Cluster 1 & Se  compone de 45  liceos que concentran 26.675 alumnos. Donde la mayoría de los alumnos de 1ero provienen  del \textbf{Quintil 1} (más crítico) (78\%) y la mitad  presentan extraedad.\\
 		\hline
-		Cl?ster 2 & El cl?ster 2 est? compuesto por 28 liceos y 10.739 alumnos.  La  matr?cula de 1? est? compuesta fundamentalmente por alumnos del \textbf{Quintil 2} y en promedio el 44\% de los alumnos presentan extraedad. \\
+		Cluster 2 & El cluster 2 está compuesto por 28 liceos y 10.739 alumnos.  La  matrícula de 1ero está compuesta fundamentalmente por alumnos del \textbf{Quintil 2} y en promedio el 44\% de los alumnos presentan extraedad. \\
 		\hline
-		Cl?ster 3 & Este cl?ster agrupa 73 liceos y 32.108 alumnos.   Si bien los alumnos provenientes del \textbf{Quintil 3} los que predominan es uno de los  cl?ster m?s heterog?neo. El promedio de extraedad es del 41\%. \\
+		Cluster 3 & Este cluster agrupa 73 liceos y 32.108 alumnos.   Si bien los alumnos provenientes del \textbf{Quintil 3} los que predominan es uno de los  cluster más heterogéneo. El promedio de extraedad es del 41\%. \\
 		\hline	
 		
-		Cl?ster 4 & Compuesto por 28 liceos y 6.449 alumnos.  La matricula de 1? mayormente proveniente del \textbf{Quintil 4} y con menores porcentajes en promedio de extraedad (30\%) en relaci?n a los anteriores. \\
+		Cluster 4 & Compuesto por 28 liceos y 6.449 alumnos.  La matricula de 1ero mayormente proveniente del \textbf{Quintil 4} y con menores porcentajes en promedio de extraedad (30\%) en relación a los anteriores. \\
 		\hline
-		Cl?ster 5 & Conformado por 81 liceos y 45.040 alumnos.  Mayormente por alumnos del \textbf{Quintil 5} (menos cr?tico) y con una presencia de  extraedad en promedio del 32\% \\
+		Cluster 5 & Conformado por 81 liceos y 45.040 alumnos.  Mayormente por alumnos del \textbf{Quintil 5} (menos crítico) y con una presencia de  extraedad en promedio del 32\% \\
 		\hline
 	\end{tabular}
-	\caption{Caracterizaci?n de cl?sters.}
+	\caption{Caracterización de clusters.}
 	\label{tabla:clusters}
 \end{table} 
 
-En el cuadro \ref{tab:AbandonoContexto} se relaciona el contexto sociocultural con el abandono del sistema educativo p?blico.
+En el cuadro \ref{tab:AbandonoContexto} se relaciona el contexto sociocultural con el abandono del sistema educativo público.
+
+
+ESTE PLOT REMPLAZA LA TABLA ref{tab:AbandonoContexto}
+% \begin{figure}[h]
+% \begin{center}
+% <<datclus, echo=FALSE, warning = FALSE, message = FALSE, fig.height = 5, fig.width = 6>>=
+% 
+% Predic_16_17 %>% filter(Centro_Grupo%in%factor(Cg[,1])) %>% filter(coberturaT>47)  %>%dplyr::select(Abandono, cl) %>%
+%   mutate(Abandono = factor(Abandono) ) %>% group_by(cl, Abandono) %>% summarise(tot = n()) %>%ggplot() + 
+%     geom_mosaic(aes(weight=tot, x=product(Abandono), fill = cl)) +
+%   scale_fill_brewer(palette = "Dark2") + labs(x = "Abandono", y = "", fill = "Cluster" )
+% 
+% @
+% \caption{Mosaicplot de Abandono vs Cluster. El ancho de cada categoría corresponde a la probabilidad asociada a Abandono mientras que la altura se corresponde con la probabilidad condicional al Cluster. En este caso estamos la información de alumnos de la matrícula que abandonaron de 2016 a 2017 dentro de los que tienen cobertura homogenea y cuayo valor supere los 47 días por género}
+% \end{center}
+% \label{clab}
+% \end{figure}
+
+\begin{figure}[h]
+\begin{center}
+<<datclusja, echo=FALSE, warning = FALSE, message = FALSE, fig.height = 5, fig.width = 6>>=
+Predic_16_17 %>% filter(Centro_Grupo%in%factor(Cg[,1])) %>% 
+  filter(coberturaT>47)  %>%dplyr::select(Abandono, cl) %>%
+  mutate(Abandono = factor(Abandono) ) %>% 
+  group_by(cl, Abandono) %>% summarise(tot = n()) %>%
+  group_by(Abandono) %>% mutate( total = sum(tot) ) %>%
+  ungroup() %>% mutate( prop = tot/total ) %>%
+  ggplot(aes(cl, prop, color=Abandono)) + geom_point() + geom_line()+
+scale_color_brewer(palette = "Dark2") + labs(x = "Cluster", y = "Proporción", fill = "Cluster" )
+@
+\end{center}
+\caption{Proporción de estudiantes en cada contexto según Abandono}
+\label{clabw}
+\end{figure}
 
 
 \begin{table}[H]
 	\centering
-
 	\begin{tabular}{|c|c|c|c|}
 		\hline
-\rowcolor[rgb]{ .776,  .878,  .706}	& No Abandona & Abandona & Poblaci?n total \\
+\rowcolor[rgb]{ .776,  .878,  .706}	& No Abandona & Abandona & Población total \\
 		\hline
 		Cluster 1 & 20.1\% &  25.6 \% & 20.4\% \\
 		\hline
@@ -535,16 +608,13 @@ En el cuadro \ref{tab:AbandonoContexto} se relaciona el contexto sociocultural c
 		Total & 100,0\% & 100,0\% &  100,0\% \\
 		\hline
 	\end{tabular}%
-	\caption{Tabla perfil columna: Abandono seg?n Contexto}
+	\caption{Tabla perfil columna: Abandono según Contexto}
 	\label{tab:AbandonoContexto}%
 \end{table}%
 
+En el cuadro \ref{tab:AbandonoContexto} se aprecia como alumnos que no abandonan tienen una composición similar a la de la población total, mientras que los alumnos que abandonan tienen mayor proporción de alumnos en los \textbf{clusters 1, 2 y 3} (más críticos) y menos proporción en los \textbf{clusters 4 y 5} (menos críticos).
 
 
-
-En el cuadro \ref{tab:AbandonoContexto} se aprecia como alumnos que no abandonan tienen una composici?n similar a la de la poblaci?n total, mientras que los alumnos que abandonan tienen mayor proporci?n de alumnos en los \textbf{clusters 1, 2 y 3} (m?s cr?ticos) y menos proporci?n en los \textbf{clusters 4 y 5} (menos cr?ticos).
-
-\newpage
 En el cuadro \ref{tab:Abcol} se hace el mismo cuadro pero para el perfil fila.
 \begin{table}[H]
 	\centering
@@ -563,22 +633,38 @@ En el cuadro \ref{tab:Abcol} se hace el mismo cuadro pero para el perfil fila.
 		\hline
 		Cluster 5 & 95.3\% &  4.7 \% & 100.0\% \\
 		\hline
-		Poblaci?n total & 93.0\% & 7,0\% &  100,0\% \\
+		Población total & 93.0\% & 7,0\% &  100,0\% \\
 		\hline
 	\end{tabular}%
-	\caption{Tabla perfil fila: Abandono seg?n Contexto}
+	\caption{Tabla perfil fila: Abandono según Contexto}
 	\label{tab:Abcol}%
 \end{table}%
  
-Se aprecia que los alumnos que pertenecen a los cluster 1, 2 y 3 tienen un comportamiento similar al de la pobalci?n total, mientras que los que pertenecen al cluster 4 y 5 tienen tasas de abandono menores. 
+ 
+ \begin{figure}[h]
+\begin{center}
+<<datextra, echo=FALSE, warning = FALSE, message = FALSE, fig.height = 5, fig.width = 6>>=
+Predic_16_17 %>% filter(Centro_Grupo%in%factor(Cg[,1])) %>% 
+  filter(coberturaT>47)  %>%dplyr::select(Abandono, cl) %>%
+  mutate(Abandono = factor(Abandono) ) %>% 
+  group_by(cl, Abandono) %>% summarise(tot = n()) %>%
+  group_by(cl) %>% mutate( total = sum(tot) ) %>% 
+  ungroup() %>% mutate( prop = tot/total ) %>%
+  ggplot(aes(cl, prop, color=Abandono)) + geom_point() + geom_line()+
+scale_color_brewer(palette = "Dark2") + labs(x = "Cluster", y = "Proporción", fill = "Cluster" )
+@
+\end{center}
+\caption{Proporción de estudiantes que Abandonan según Extra edad}
+\label{extra}
+\end{figure}
+ \end{document}
+ 
+Se aprecia que los alumnos que pertenecen a los cluster 1, 2 y 3 tienen un comportamiento similar al de la pobalción total, mientras que los que pertenecen al cluster 4 y 5 tienen tasas de abandono menores. 
 
-Las tasas de abandono para los alumnos del cluster 5 es mayor que la de alumnos del cluster 4. Recordar que en este contexto, se toma en cuenta en abandono del sistema educativo p?blico, por lo que puede haber casos de alumnos que vayan al sistema educativo privado.
-
-
-
+Las tasas de abandono para los alumnos del cluster 5 es mayor que la de alumnos del cluster 4. Recordar que en este contexto, se toma en cuenta en abandono del sistema educativo público, por lo que puede haber casos de alumnos que vayan al sistema educativo privado.
 
 \vspace{1cm}
-En el gr?fico \ref{fig:eefyab} se va a relacionar la extra-edad fuerte de los alumnos con el abandono del sistema educativo p?blico.
+En el gráfico \ref{fig:eefyab} se va a relacionar la extra-edad fuerte de los alumnos con el abandono del sistema educativo público.
 %\begin{table}[htbp]
 %	\centering
 %	
@@ -607,8 +693,29 @@ En el gr?fico \ref{fig:eefyab} se va a relacionar la extra-edad fuerte de los al
 
 
 
+\begin{figure}[h]
+\begin{center}
+<<datclus, echo=FALSE, warning = FALSE, message = FALSE, fig.height = 5, fig.width = 6>>=
+#Calculo la extraedad Leve
+Predic_16_17$EE_Leve <- 0
+Predic_16_17[Predic_16_17$`Fecha nacimiento` < as.Date("2003-04-30"),]$EE_Leve<-1
+
+#calculo la extraedad fuerte
+Predic_16_17$EE_Fuerte<-0
+Predic_16_17[Predic_16_17$`Fecha nacimiento` <as.Date("2002-04-30"),]$EE_Fuerte<-1
 
 
+Predic_16_17 %>% filter(Centro_Grupo%in%factor(Cg)) %>% filter(coberturaT>47)%>%  dplyr::select(Abandono, EE_Fuerte) %>% 
+  mutate(Abandono = factor(Abandono) ) %>% group_by( Abandono, EE_Fuerte) %>% summarise(tot = n()) %>%ggplot() +
+    geom_mosaic(aes(weight=tot, x=product(Abandono), fill = EE_Fuerte)) +
+  scale_fill_brewer(palette = "Dark2") + labs(x = "Abandono", y = "", fill = "Extra edad" )
+
+@
+\caption{Mosaicplot de Abandono vs Extra edad. El ancho de cada categoría corresponde a la probabilidad asociada a Abandono mientras que la altura se corresponde con la probabilidad condicional de Extra edad dado Abandono. En este caso estamos la información de alumnos de la matrícula que abandonaron de 2016 a 2017 dentro de los que tienen cobertura homogenea y cuayo valor supere los 47 días por género}
+\end{center}
+\label{clab}
+\end{figure}
+\end{document}
 De los alumnos que no abandonan hay un gran porcentaje (89,1\%) que no tiene extra-edad fuerte, en cambio de los que abandonan hay un gran porcentaje (61,5\%) con extra-edad fuerte.
 
 
