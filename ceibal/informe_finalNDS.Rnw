@@ -455,6 +455,8 @@ scale_fill_brewer(palette = "Dark2") +
 
 La proporción de alumnos que abandonan y los que no, tiene un comportamiento muy similar al de la matrícula total mostrada previamente en la Figura \ref{propaba}.
 
+
+
 % 
 % TABLA \ref{Aband2}
 % \begin{table}[H]
@@ -479,7 +481,7 @@ EL MOSAIC PLOT REMPLAZA A LA TABLA \ref{tab:Sexo},
 \begin{center}
 <<datprdd2, echo=FALSE, warning = FALSE, message = FALSE, fig.height = 5, fig.width = 6>>=
 
-Predic_16_17 %>% filter(Centro_Grupo%in%factor(Cg)) %>% filter(coberturaT>47)  %>% dplyr::select(Abandono, Sexo) %>%
+Predic_16_17 %>% filter(Centro_Grupo%in%factor(Cg[,1])) %>% filter(coberturaT>47)  %>% dplyr::select(Abandono, Sexo) %>%
   mutate(Abandono = factor(Abandono) ) %>% group_by(Sexo, Abandono) %>% summarise(tot = n()) %>% ggplot() +
     geom_mosaic(aes(weight=tot, x=product(Abandono), fill = Sexo)) +
   scale_fill_brewer(palette = "Dark2") + labs(x = "Abandono", y = "", fill = "Género" )
@@ -640,7 +642,7 @@ En el cuadro \ref{tab:Abcol} se hace el mismo cuadro pero para el perfil fila.
 	\label{tab:Abcol}%
 \end{table}%
  
- 
+
  \begin{figure}[h]
 \begin{center}
 <<datextra, echo=FALSE, warning = FALSE, message = FALSE, fig.height = 5, fig.width = 6>>=
@@ -657,7 +659,7 @@ scale_color_brewer(palette = "Dark2") + labs(x = "Cluster", y = "Proporción", f
 \caption{Proporción de estudiantes que Abandonan según Extra edad}
 \label{extra}
 \end{figure}
- \end{document}
+
  
 Se aprecia que los alumnos que pertenecen a los cluster 1, 2 y 3 tienen un comportamiento similar al de la pobalción total, mientras que los que pertenecen al cluster 4 y 5 tienen tasas de abandono menores. 
 
@@ -684,12 +686,12 @@ En el gráfico \ref{fig:eefyab} se va a relacionar la extra-edad fuerte de los a
 %\end{table}%
 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{EEFyAb}
-	\caption{Extra edad fuerte y abandono}
-	\label{fig:eefyab}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=0.5\linewidth]{EEFyAb}
+% 	\caption{Extra edad fuerte y abandono}
+% 	\label{fig:eefyab}
+% \end{figure}
 
 
 
@@ -705,23 +707,21 @@ Predic_16_17$EE_Fuerte<-0
 Predic_16_17[Predic_16_17$`Fecha nacimiento` <as.Date("2002-04-30"),]$EE_Fuerte<-1
 
 
-Predic_16_17 %>% filter(Centro_Grupo%in%factor(Cg)) %>% filter(coberturaT>47)%>%  dplyr::select(Abandono, EE_Fuerte) %>% 
+Predic_16_17 %>% filter(Centro_Grupo%in%factor(Cg[,1])) %>% filter(coberturaT>47)%>%  dplyr::select(Abandono, EE_Fuerte) %>% 
   mutate(Abandono = factor(Abandono) ) %>% group_by( Abandono, EE_Fuerte) %>% summarise(tot = n()) %>%ggplot() +
     geom_mosaic(aes(weight=tot, x=product(Abandono), fill = EE_Fuerte)) +
-  scale_fill_brewer(palette = "Dark2") + labs(x = "Abandono", y = "", fill = "Extra edad" )
+  scale_fill_brewer(palette = "Dark2") + labs(x = "Abandono", y = "", fill = "EE_Fuerte" )
 
 @
-\caption{Mosaicplot de Abandono vs Extra edad. El ancho de cada categoría corresponde a la probabilidad asociada a Abandono mientras que la altura se corresponde con la probabilidad condicional de Extra edad dado Abandono. En este caso estamos la información de alumnos de la matrícula que abandonaron de 2016 a 2017 dentro de los que tienen cobertura homogenea y cuayo valor supere los 47 días por género}
+\caption{Mosaicplot de Abandono vs Extra edad fuerte. El ancho de cada categoría corresponde a la probabilidad asociada a Abandono mientras que la altura se corresponde con la probabilidad condicional de Extra edad fuerte dado Abandono. En este caso estamos la información de alumnos de la matrícula que abandonaron de 2016 a 2017 dentro de los que tienen cobertura homogenea y cuayo valor supere los 47 días por género}
 \end{center}
-\label{clab}
+\label{fig:eefyab}
 \end{figure}
-\end{document}
+
+
 De los alumnos que no abandonan hay un gran porcentaje (89,1\%) que no tiene extra-edad fuerte, en cambio de los que abandonan hay un gran porcentaje (61,5\%) con extra-edad fuerte.
 
-
-\newpage
-
-En el gr?fico \ref{fig:eelyab} se va a relacionar la extra-edad leve de los alumnos con el abandono del sistema educativo p?blico.
+En el gráfico \ref{fig:eelyab} se va a relacionar la extra-edad leve de los alumnos con el abandono del sistema educativo público.
 
 %\begin{table}[htbp]
 %	\centering
@@ -742,14 +742,28 @@ En el gr?fico \ref{fig:eelyab} se va a relacionar la extra-edad leve de los alum
 %\end{table}%
 
 
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=0.5\linewidth]{EELyAb}
+% 	\caption{Extra edad leve y abandono}
+% 	\label{fig:eelyab}
+% \end{figure}
 
 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{EELyAb}
-	\caption{Extra edad leve y abandono}
-	\label{fig:eelyab}
+\begin{figure}[h]
+\begin{center}
+<<extralev, echo=FALSE, warning = FALSE, message = FALSE, fig.height = 5, fig.width = 6>>=
+
+Predic_16_17 %>% filter(Centro_Grupo%in%factor(Cg[,1])) %>% filter(coberturaT>47)%>%  dplyr::select(Abandono, EE_Leve) %>% 
+  mutate(Abandono = factor(Abandono) ) %>% group_by( Abandono, EE_Leve) %>% summarise(tot = n()) %>%ggplot() +
+    geom_mosaic(aes(weight=tot, x=product(Abandono), fill = EE_Leve)) +
+  scale_fill_brewer(palette = "Dark2") + labs(x = "Abandono", y = "", fill = "EE_Leve" )
+
+@
+\caption{Mosaicplot de Abandono vs Extra edad leve. El ancho de cada categoría corresponde a la probabilidad asociada a Abandono mientras que la altura se corresponde con la probabilidad condicional de Extra edad leve dado Abandono. En este caso estamos la información de alumnos de la matrícula que abandonaron de 2016 a 2017 dentro de los que tienen cobertura homogenea y cuayo valor supere los 47 días por género}
+\end{center}
+\label{fig:eelyab}
 \end{figure}
 
 
@@ -757,35 +771,80 @@ De los alumnos que no abandonan hay un gran porcentaje (68,3\%) que no tiene ext
 
 
 
+En el gráfico \ref{fig:inasistenciasrelativas} se muestra el gráfico de densidad de las \textbf{inasistencias relativas} de los alumnos, recordar que la misma se calcula como el total de inasistencias del alumno sobre el total de veces que se le pas? la lista.
 
-\newpage
-En el gr?fico \ref{fig:inasistenciasrelativas} se muestra el gr?fico de densidad de las \textbf{inasistencias relativas} de los alumnos, recordar que la misma se calcula como el total de inasistencias del alumno sobre el total de veces que se le pas? la lista.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{InasistenciasRelativas}
-	\caption{Densidad de inasistencias relativas }
-	\label{fig:inasistenciasrelativas}
+
+\begin{figure}[h]
+\begin{center}
+<<inasis, warning=FALSE,message=FALSE, echo=FALSE, fig.width = 5, fig.height = 5>>=
+#calculo inasistencias relativas al total
+Predic_16_17$inas_rel<-Predic_16_17$inasistencias/Predic_16_17$coberturaT
+
+
+Predic_16_17$Abandono<-as.factor(Predic_16_17$Abandono)
+Predic_16_17$EE_Fuerte<-as.factor(Predic_16_17$EE_Fuerte)
+Predic_16_17$EE_Leve<-as.factor(Predic_16_17$EE_Leve)
+Predic_16_17$cl<-as.factor(Predic_16_17$cl)
+Predic_16_17$Sexo<-as.factor(Predic_16_17$Sexo)
+
+Predic_16_17 %>% filter(Centro_Grupo%in%factor(Cg[,1])) %>% filter(coberturaT>47)%>%  dplyr::select(inas_rel) %>%  ggplot() +
+  geom_histogram(aes(x=inas_rel, y=..density..), bins = 30,col="grey") +
+  labs(x = "Frecuencia",y="Densidad")
+#   ggplot() +
+#   geom_histogram(aes(x=inas_rel))
+# d <- density(BC$inas_rel)
+# plot(d, main="Densidad de inasistencias relativas ")
+# polygon(d, col="red", border="black")
+@
+\end{center}
+\caption{Histograma de inasistencias relativas}
+\label{fig:inasistenciasrelativas}
 \end{figure}
 
-En este gr?fico de densidad se observa una gran masa de alumnos que tienen menos de 30\% de inasistencias relativas. Es decir, estos alumnos faltaron menos del 30\% del total de veces que le pasaron la lista.  
+
+
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=0.7\linewidth]{InasistenciasRelativas}
+% 	\caption{Densidad de inasistencias relativas }
+% 	\label{fig:inasistenciasrelativas}
+% \end{figure}
+
+
+En este gráfico de densidad se observa una gran masa de alumnos que tienen menos de 30\% de inasistencias relativas. Es decir, estos alumnos faltaron menos del 30\% del total de veces que le pasaron la lista.  
 
 Menos del 10\% de los alumnos tienen m?s del 30\% de inasistencias relativas, para ver como es su relaci?n con el abandono, en la siguiente pagina se muestra un boxplot separando aquellos alumnos que abandonaron contra los que no lo hicieron.
-\newpage
-En el gr?fico \ref{fig:inasrel} se observan las inasistencias relativas para las dos poblaciones, de los alumnos que abandonan y de los que no. El \textit{boxplot} de la izquierda representa los alumnos que no abandonan el sistema educativo p?blico y el de la derecha los que si lo hacen.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.7\linewidth]{Inas_rel}
-	
-	\caption{Inasistencias relativas seg?n abandono}
+
+En el gráfico \ref{fig:inasrel} se observan las inasistencias relativas para las dos poblaciones, de los alumnos que abandonan y de los que no. El \textit{boxplot} de la izquierda representa los alumnos que no abandonan el sistema educativo público y el de la derecha los que si lo hacen.
+
+\begin{figure}[h]
+\begin{center}
+<<inbox, warning=FALSE, message=FALSE, echo=FALSE, fig.width=5,fig.height=5>>=
+Predic_16_17 %>% filter(Centro_Grupo%in%factor(Cg[,1])) %>% filter(coberturaT>47)%>%  dplyr::select(Abandono,inas_rel) %>%  ggplot() +
+geom_boxplot(aes(x=Abandono,y=inas_rel)) + scale_color_brewer(palette="Dark2")
+
+@
+\end{center}
 	\label{fig:inasrel}
+\caption{Inasistencias relativas según abandono}
 \end{figure}
-En el gr?fico se identifica claramente que los alumnos que abandonan tienen mayores porcentajes de inasistencias relativas. Es decir, la mitad de los alumnos que abandonan tienen entre un 22\% y un 43\% de inasistencias relativas. En cambio la mitad de los alumnos que no abandonan tienen entre un 1\% y un 10\% de inasistencias relativas
 
 
-\newpage
+% 
+% \begin{figure}[H]
+% 	\centering
+% 	\includegraphics[width=0.7\linewidth]{Inas_rel}
+% 	
+% 	\caption{Inasistencias relativas seg?n abandono}
+% 	\label{fig:inasrel}
+% \end{figure}
 
-	\section{Modelo log?stico de predicci?n}
+En el gráfico se identifica claramente que los alumnos que abandonan tienen mayores porcentajes de inasistencias relativas. Es decir, la mitad de los alumnos que abandonan tienen entre un 22\% y un 43\% de inasistencias relativas. En cambio la mitad de los alumnos que no abandonan tienen entre un 1\% y un 10\% de inasistencias relativas
+
+\end{document}
+
+	\section{Modelo logístico de predicción}
 
 Una vez realizado el an?lisis exploratorio de las variables y cada una de ellas con respecto a la variable dependiente se procede a realizar la experimentaci?n del modelo log?stico. 
 
