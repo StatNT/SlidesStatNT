@@ -47,9 +47,6 @@ Predic_16_17$Sexo<-as.factor(Predic_16_17$Sexo)
 chisq.test(Predic_16_17$Sexo,Predic_16_17$cl)
 
 
-
-
-
 # # # Descriptivo de las variables a utilizar en el modelo # # #
 
 table(Predic_16_17$nombre_departamento)
@@ -58,16 +55,16 @@ addmargins(table(Predic_16_17$Abandono))
 
 addmargins(prop.table(table(Predic_16_17$Abandono)))
 
-# en donde están los gurises que en 2017 están en el sistema público
+# en donde est?n los gurises que en 2017 est?n en el sistema p?blico
 Predic_16_17$G17 <- substr(Predic_16_17$Grupo_UE_2017,1,3)
 addmargins(table(Predic_16_17$G17, useNA="ifany"))
 addmargins(table(Predic_16_17[Predic_16_17$Abandono == 0,]$G17, useNA="ifany"))
 
-#analisis de la cobertura del pasaje de lista en línea
+#analisis de la cobertura del pasaje de lista en l?nea
 x11(8,8)
 ggplot(COB_stats2, aes(Predominio)) +
   geom_histogram(bins = 50,col="grey",fill="red")+
-  labs(title="máxima frecuencia de la cobertura por grupo",x="frecuencia",y="cantidad")
+  labs(title="m?xima frecuencia de la cobertura por grupo",x="frecuencia",y="cantidad")
 
 dim(COB_stats2[COB_stats2$Predominio==1,])
 
@@ -87,10 +84,10 @@ boxplot(Predic_16_17[Predic_16_17$Centro_Grupo %in% Centro,]$coberturaT,col = "b
 summary(Predic_16_17[Predic_16_17$Centro_Grupo %in% Centro,]$coberturaT)
 
 summary(COB_stats2$Predominio)
-dim(COB_stats2[COB_stats2$Predominio>0.8 & COB_stats2$CobPred>47,])
-Cg<-COB_stats2[COB_stats2$Predominio>0.8 & COB_stats2$CobPred>47,]$Centro_Grupo
-BC<-Predic_16_17[Predic_16_17$Centro_Grupo %in% Cg,]
-BC<-BC[BC$coberturaT>47,]
+dim(COB_stats2[COB_stats2$Predominio>0.8 & COB_stats2$CobPred>47, ])
+Cg <- COB_stats2[COB_stats2$Predominio>0.8 & COB_stats2$CobPred>47, ]$Centro_Grupo
+BC <- Predic_16_17[Predic_16_17$Centro_Grupo %in% Cg, ]
+BC <- BC[BC$coberturaT>47, ]
 summary(BC$coberturaT)
 save(x=BC,file ="../RDatas/BC.RData")
 
@@ -157,7 +154,7 @@ nrow(BC[BC$inas_rel <= 0.3,])/nrow(BC)
 fill="red"
 line="black"
 x11(8,8)
-ggplot(BC,aes(x=Abandono,y=inas_rel))+geom_boxplot(fill=fill, colour=line)+ scale_y_continuous(name="inasistencias relativas")+ggtitle("inasistencias relativas según abandono")
+ggplot(BC,aes(x=Abandono,y=inas_rel))+geom_boxplot(fill=fill, colour=line)+ scale_y_continuous(name="inasistencias relativas")+ggtitle("inasistencias relativas seg?n abandono")
 
 summary(BC[BC$Abandono==1,]$inas_rel)
 summary(BC[BC$Abandono==0,]$inas_rel)
