@@ -1,0 +1,116 @@
+---
+title: "Actividad grupal"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Abra un archivo de R y responda las siguientes preguntas. En cada respuesta tiene que poner el código de R como respuesta.
+Cuando terminen me mandan el archivo por correo a natalia@iesta.edu.uy
+
+```{r}
+#Nombres de los integrantes del grupo
+
+# Ejercicio 1
+
+#1. código de R
+#2. código de R
+#3. código de R
+
+```
+
+# Ejercicio 1
+En base a tu conocimiento sobre coerción de vectores.
+¿Cuál es el tipo de vector que se obtiene de las siguiente coerciones?
+
+
+1. `c(8, FALSE)`
+`double`  
+
+2. `c("zz", 99)`
+`character`
+
+3. `c(TRUE, "a") `
+`character`
+
+4. `c(TRUE, 1L)`
+`integer`
+
+5. `c(8L, 4)`
+`numeric`
+
+# Ejercicio 2
+
+
+1. Genere el vector $x$ e $y$ tal que  $x = (3, 2, 2, 4, 5)^T$  e $y=(1,6,5,7,8)^T$ 
+```{r }
+x <- c(3, 2, 2, 4, 5)
+y <- c(1, 6, 5, 7, 8)
+```
+2. $\sum_i^5 y_i$
+```{r}
+
+sum(y)
+
+```
+
+3. $2x_1 -3y_2$
+```{r}
+2*x[1] - 3*y[2]
+
+```
+4. $x_1+x_5 - y_3$
+```{r}
+x[1] + x[5] -y[3]
+```
+5. $\bar x$ y $8\bar y$
+
+```{r}
+mean(x) - 8*mean(y)
+```
+
+# Ejercicio 3 
+
+ Arme una lista con nombre `ll` con los siguentes componentes:
+
+1. un vector numérico de longitud 4
+```{r}
+aa <- c(1, 3, 5, 6)
+```
+2. un caracter 
+```{r}
+bb <- "jaja"
+```
+3. un vector caracter de longitud 4 
+```{r}
+cc <- c("Me", "gusta", "mucho", "R")
+```
+4. un vector lógico de longitud 3
+```{r}
+dd <- c(FALSE, TRUE, FALSE)
+```
+5. el número 1000
+
+```{r}
+ee <- 1000
+```
+6. seleccione el tercer miembro de la lista
+```{r}
+ll <- list(aa, bb, cc, dd, ee)
+ll[[3]]
+```
+7. seleccione el tercer elemento del primer miembro de la lista y multiplíquelo por 8
+```{r}
+8*ll[[1]][3]
+```
+8. ¿Cuál es el valor del segundo elemento del cuarto miembro de la lista?
+
+```{r}
+ll[[4]][2]
+```
+
+

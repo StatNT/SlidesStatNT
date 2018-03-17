@@ -1,0 +1,103 @@
+---
+title: "Actividad grupal 2"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Abra un archivo de R y responda las siguientes preguntas. En cada respuesta tiene que poner el código de R como respuesta.
+Cuando terminen me mandan el archivo por correo a natalia@iesta.edu.uy
+
+```{r}
+#Nombres de los integrantes del grupo
+
+# Ejercicio 1
+
+#1. código de R
+#2. código de R
+#3. código de R
+
+```
+
+# Ejercicio 1 (FACTOR)
+Sea `x <- c("bueno", "muy bueno", "excelente", "bueno")`
+
+1. Transformar `x` en un factor con los niveles "malo", "bueno", "muy bueno", "excelente" y guardalo en un objeto llamado `new_x`.
+
+
+```{r}
+x <- c("bueno", "muy bueno", "excelente", "bueno", "bueno")
+new_x <- factor(x, levels = c("malo", "bueno", "muy bueno", "excelente"))
+
+```
+2. Usando la función `ordered` ordenar los niveles  del factor `new_x` en orden reverso (excelente, muy bueno, bueno, malo)
+
+```{r}
+
+a <- ordered(new_x, levels = c("excelente", "muy bueno", "bueno", "malo"))
+
+```
+
+
+3. Ahora usá la función `relevel` para hacer que el primer nivel de `new_x` sea excelente.
+
+```{r,  eval = FALSE}
+relevel(new_x,"excelente")
+```
+
+4. Ahora transformá `x` en un factor con los niveles "excelente", "muy bueno",  "bueno", "malo" y  que las etiquetas sean "e", "mb", "b" y "m". Nombrar el nuevo objeto como `order_x`
+
+```{r}
+order_x <- factor(x, levels = rev(c("malo", "bueno", "muy bueno", "excelente")), 
+                labels = c("excelente", "muy bueno", "bueno", "malo"))
+
+```
+
+
+# Ejercicio 2 (MATRIX ARRAY)
+
+
+1. Generá un array como el siguiente
+
+![](array.png)
+
+```{r,eval=FALSE}
+a <- array(c(1:6, 10:15, 20:25), c(3, 2, 3))
+
+a[1:3, 1:2,3]
+```
+2. Seleccioná la tercer matriz del array 
+
+
+# Ejercicio 3 
+
+1. Creá un data frame con 5 filas y 4 columnas que contengan dos variables categóricas (género y color de pelo) y dos variables numéricas (edad, peso en kg). Nombrá el objeto como `df`
+
+```{r}
+g <- c("M", "F", "F", "M", "M")
+cp <- c("N", "R", "M", "N", "M")
+edad <- c(19, 21, 22, 30, 24)
+peso <- c(76, 55, 60, 70, 79)
+
+df <- data.frame(g, cp, edad, peso)
+
+```
+2. Qué clase de datos hay en cada columna, que función usas para ver eso?
+
+3. Agregá una nueva variable numérica con la altura en cm, usa `cbind`
+
+4. Agregá un nuevo registro a tu data frame que sea Mujer, de pelo Negro, 28 años y pese 53 kg. Para esto utilizá la función `rbind` 
+```{r,  eval=FALSE}
+
+rbind(c("F", "N", 28, 53), c("F", "N", 28, 53))
+```
+5. Que pasó con la estructura de los datos?
+
+6.Usando la función `which.max` obtenga la observación con la edad máxima
+```{r,  eval=FALSE}
+df$edad[which.max(df$edad)]
+```

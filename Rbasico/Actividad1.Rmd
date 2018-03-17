@@ -1,0 +1,61 @@
+---
+title: "Actividad grupal"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Abra un archivo de R y responda las siguientes preguntas. En cada respuesta tiene que poner el código de R como respuesta.
+Cuando terminen me mandan el archivo por correo a natalia@iesta.edu.uy
+
+```{r}
+#Nombres de los integrantes del grupo
+
+# Ejercicio 1
+
+#1. código de R
+#2. código de R
+#3. código de R
+
+```
+
+# Ejercicio 1
+En base a tu conocimiento sobre coerción de vectores.
+¿Cuál es el tipo de vector que se obtiene de las siguiente coerciones?
+
+
+1. `c(8, FALSE)`
+2. `c("zz", 99)`
+3. `c(TRUE, "a") `
+4. `c(TRUE, 1L)`
+5. `c(8L, 4)`
+
+# Ejercicio 2
+
+
+1. Genere el vector $x$ e $y$ tal que  $x = (3, 2, 2, 4, 5)^T$  e $y=(1,6,5,7,8)^T$ 
+2. $\sum_i^5 y_i$
+3. $2x_1 -3y_2$
+4. $x_1+x_5 - y_3$
+5. $\bar x$ y $8\bar y$
+
+
+# Ejercicio 3 
+
+ Arme una lista con nombre `ll` con los siguentes componentes:
+
+1. un vector numérico de longitud 4
+2. un caracter 
+3. un vector caracter de longitud 4 
+4. un vector lógico de longitud 3
+5. el número 1000
+6. seleccione el tercer miembro de la lista
+7. seleccione el tercer elemento del primer miembro de la lista y multiplíquelo por 8
+8. ¿Cuál es el valor del segundo elemento del cuarto miembro de la lista?
+
+
+
