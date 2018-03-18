@@ -26,9 +26,8 @@
 %\setbeamerfont{frametitle}{size=\normalsize,series=\bfseries}
 %\setbeamertemplate{navigation symbols}{}
 
-\author{Instituto de Estadística (IESTA)\\
-Natalia da Silva\\
-@pacocuak
+\author{Natalia da Silva\\
+@STAT_NT
 }
 
 \title{Importancia de la Visualizaci\'on Estad\'istica}
