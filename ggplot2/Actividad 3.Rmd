@@ -25,7 +25,6 @@ Cuando terminen me mandan el archivo por correo a natalia@iesta.edu.uy
 
 # Ejercicio 1
 
-
 Con los datos `mpg` que se encuentran disponible en `ggplot2` hacer un plot con las siguientes características:
 
 - Un scatterplot de   `hwy` vs `cty` 
@@ -36,7 +35,7 @@ Usar `?mpg` para ver la descripción de las variables.
 
 ```{r, echo=FALSE,eval=FALSE}
 
-ggplot(data = mpg, aes(x=hwy, y = cty)) + geom_point() +
+ggplot(data = mpg, aes(x = hwy, y = cty)) + geom_point() +
  labs(x = "Millas por galón en ruta", y = "Millas por galón en ciudad", title = "Scatterplot hwy vs cty", colour="Tipo de auto") 
 ```
 
@@ -60,18 +59,15 @@ ggplot(data = mpg, aes(x = hwy, y = cty))  +
 ggplot(data = mpg, aes(x=hwy, y = cty))   + geom_jitter()
  labs(x = "Millas por galón en ruta", y = "Millas por galón en ciudad", title = "Scatterplot hwy vs cty", colour="Tipo de auto")  
 ```
-3. Qué opción te resulta más apropiada y porqué ? 
+3. ¿Qué opción te resulta más apropiada y porqué ? 
  
- 
-
-
 #  Ejercicio 3
 
 Usá como base el gráfico del ejercicio 2 con `geom_jitter.
 
 1. Coloreá usando la variable `class`
  
-```{r, echo=FALSE,eval=FALSE}
+```{r, echo = FALSE, eval = FALSE}
 
 ggplot(data = mpg, aes(x = hwy, y = cty, color = class))  + 
    geom_jitter() +
@@ -81,7 +77,7 @@ ggplot(data = mpg, aes(x = hwy, y = cty, color = class))  +
 2. Usá el gráfico anterior pero cambiando la paleta de colores a `Dark2`
   Chequear la ayuda de `?scale_colour_brewer`. Para mirar otras posibles paletas visitar: http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3
 
-```{r, echo=FALSE,eval=FALSE}
+```{r, echo = FALSE,eval=FALSE}
 
 ggplot(data = mpg, aes(x = hwy, y = cty, color = class))  + 
    geom_jitter() +
@@ -90,8 +86,7 @@ ggplot(data = mpg, aes(x = hwy, y = cty, color = class))  +
 
 3. Usá la variable `class` para crear un gráfico para cada subconjunto, mirá `?facet_wrap`.
 
-
-```{r, echo=FALSE,eval=FALSE}
+```{r, echo = FALSE, eval = FALSE}
 
 ggplot(data = mpg, aes(x = hwy, y = cty, color = class))  + 
    geom_jitter() + facet_wrap(~class)+
