@@ -29,14 +29,14 @@ Sea `x <- c("bueno", "muy bueno", "excelente", "bueno")`
 1. Transformar `x` en un factor con los niveles "malo", "bueno", "muy bueno", "excelente" y guardalo en un objeto llamado `new_x`.
 
 
-```{r}
+```{r, echo=FALSE}
 x <- c("bueno", "muy bueno", "excelente", "bueno", "bueno")
 new_x <- factor(x, levels = c("malo", "bueno", "muy bueno", "excelente"))
 
 ```
 2. Usando la función `ordered` ordenar los niveles  del factor `new_x` en orden reverso (excelente, muy bueno, bueno, malo)
 
-```{r}
+```{r, echo=FALSE}
 
 a <- ordered(new_x, levels = c("excelente", "muy bueno", "bueno", "malo"))
 
@@ -45,13 +45,13 @@ a <- ordered(new_x, levels = c("excelente", "muy bueno", "bueno", "malo"))
 
 3. Ahora usá la función `relevel` para hacer que el primer nivel de `new_x` sea excelente.
 
-```{r,  eval = FALSE}
+```{r,   echo=FALSE,eval = FALSE}
 relevel(new_x,"excelente")
 ```
 
 4. Ahora transformá `x` en un factor con los niveles "excelente", "muy bueno",  "bueno", "malo" y  que las etiquetas sean "e", "mb", "b" y "m". Nombrar el nuevo objeto como `order_x`
 
-```{r}
+```{r, echo=FALSE}
 order_x <- factor(x, levels = rev(c("malo", "bueno", "muy bueno", "excelente")), 
                 labels = c("excelente", "muy bueno", "bueno", "malo"))
 
@@ -65,10 +65,10 @@ order_x <- factor(x, levels = rev(c("malo", "bueno", "muy bueno", "excelente")),
 
 ![](array.png)
 
-```{r,eval=FALSE}
+```{r,eval=FALSE, echo=FALSE}
 a <- array(c(1:6, 10:15, 20:25), c(3, 2, 3))
 
-a[1:3, 1:2,3]
+a[, ,3]
 ```
 2. Seleccioná la tercer matriz del array 
 
@@ -77,7 +77,7 @@ a[1:3, 1:2,3]
 
 1. Creá un data frame con 5 filas y 4 columnas que contengan dos variables categóricas (género y color de pelo) y dos variables numéricas (edad, peso en kg). Nombrá el objeto como `df`
 
-```{r}
+```{r, echo=FALSE}
 g <- c("M", "F", "F", "M", "M")
 cp <- c("N", "R", "M", "N", "M")
 edad <- c(19, 21, 22, 30, 24)
@@ -88,16 +88,25 @@ df <- data.frame(g, cp, edad, peso)
 ```
 2. Qué clase de datos hay en cada columna, que función usas para ver eso?
 
+```{r, eval=FALSE,echo=FALSE}
+str(df)
+```
 3. Agregá una nueva variable numérica con la altura en cm, usa `cbind`
-
+```{r, echo=FALSE}
+df <- cbind(df, altura= c(200, 155, 170, 165,176 ))
+```
 4. Agregá un nuevo registro a tu data frame que sea Mujer, de pelo Negro, 28 años y pese 53 kg. Para esto utilizá la función `rbind` 
-```{r,  eval=FALSE}
+```{r, echo=FALSE, eval=FALSE}
 
-rbind(c("F", "N", 28, 53), c("F", "N", 28, 53))
+df <- rbind(df,c("F", "N", 28, 53, 170))
 ```
 5. Que pasó con la estructura de los datos?
+```{r, eval=FALSE,echo=FALSE}
+str(df)
+```
+Las variables numéricas se transformaron en caracter.
 
 6.Usando la función `which.max` obtenga la observación con la edad máxima
-```{r,  eval=FALSE}
+```{r, echo=FALSE, eval=FALSE}
 df$edad[which.max(df$edad)]
 ```
