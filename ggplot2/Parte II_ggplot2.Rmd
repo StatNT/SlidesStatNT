@@ -21,6 +21,54 @@ widescreen: no
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+## <span style="color:#88398A">Gramática de gráficos </span>
+
+Clase pasada:
+
+- **data**: con mapeos (aes) entre los datos y los elementos gráficos
+- **layers**: elementos geométricos (**geoms**, son puntos, lineas, rectángulos, texto, ...) y transformaciones estadísticas (**stats**, son identidades, conteos, bins,...)
+- **scales**: mapea valores en el espacio de los datos a valores en el espacio estético (ej. color, tamaño, forma o tb posición) 
+- **coord**: normalmente Cartesianas, pero ej pie charts ej; polar
+- **facetas**: como se arregla el display cuando son muchos gráficos 
+- **theme** items para mejorar el dibujo como fuente, tamaño color, background...
+
+## <span style="color:#88398A">Gramática de gráficos </span>
+
+```{r, echo = TRUE, fig.height = 4, fig.width = 5,  warning = FALSE, message=FALSE,fig.align="center", strip.white=TRUE }
+
+library(ggplot2)
+
+ggplot(mpg, aes(displ, hwy, colour = factor(cyl))) +
+  geom_point()   
+
+```
+
+## <span style="color:#88398A">Qué hay atraás de este plot?</span>
+
+- Cada observación representada como un punto cuya posición está de acuerdo a dos variables (posición horizontal y vertical)
+
+- Cada punto tiene tamaño,  color y forma estos atributos son llamados elementos estéticos (inglés aesthetics `aes` )
+
+-  Los `aes` son propiedades que pueden ser percibidas en el gráfico
+cada `aes` puede ser mapeado a una variable o fijado en un valor constante
+
+- `displ` es mapeado a la posición horizontal, `hwy`  a la posición vertical y `cyl` al color. Tamaño y forma no son mapeados a variables (valor por defecto) 
+
+## <span style="color:#88398A">Qué hay atrás de este plot?</span>
+
+```{r, warning = FALSE, message = FALSE}
+library(dplyr)
+mpg %>% select(displ, hwy, cyl) %>% head(n=3)
+
+```
+- Nuevos datos, mapeo de los elementos estétocos a los datos origianles
+
+|x  | y | colour|
+|---|---|-------|
+|1.8|	29|	     4|		
+|1.8|	29|	     4|		
+|2.0|	31|	     4|		
+
 
 ## <span style="color:#88398A">Otros geoms: geom_smooth</span>
  
@@ -32,6 +80,26 @@ knitr::opts_chunk$set(echo = FALSE)
 - `geom_histogram()` 
 - `geom_bar()`
 - `geom_path()` y `geom_lines()`
+
+## <span style="color:#88398A">Mismos datos dif plots</span>
+```{r, echo=TRUE}
+ggplot(mpg, aes(displ, hwy, colour = factor(cyl))) + geom_line() +
+theme(legend.position = "none")
+```
+
+
+
+## <span style="color:#88398A">Mismos datos dif plots</span>
+```{r, echo=TRUE}
+
+ggplot(mpg, aes(displ, hwy, colour = factor(cyl))) + 
+  geom_bar(stat = "identity", position = "identity", fill = NA) + theme(legend.position = "none")
+```
+
+## <span style="color:#88398A">Mismos datos dif plots</span>
+
+- Con los mismos datos podemos generar muchos gráficos que aunque estaán gramaticalmente bien, son visualizaciones que no tienen sentido
+
 
 ## <span style="color:#88398A">Otros geoms: geom_smooth</span>
 Si el scatterplot tiene mucho ruido se puede usar un suavizado para facilitar ver el patrón dominante usando `geom_smooth()`.
@@ -78,6 +146,17 @@ ggplot(data = tips, aes(x = totbill, y = tip)) +
   geom_abline(intercept = coef[[1]] , slope = coef[[2]] )
 
 ```
+
+
+## <span style="color:#88398A">scales </span>
+
+- Los datos hay que convertirlos desde unidades datos (litros, millas, etc) a unidades gráficas (color, pixeles, etc) que se pueden reprensetar en la compu
+
+- La conversión es llamada escalado y es realizada por `scales`
+
+- `colour` son representados por una cadena de seis letras, `sizes` por nuúmeros y `shape` por enteros
+
+- Estas especificaciones estéticas que tienen sentido para R se describen en ` vignette("ggplot2-specs")`
 
 ## <span style="color:#88398A">Incluir labs</span>
 
