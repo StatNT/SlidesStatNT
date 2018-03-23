@@ -43,18 +43,18 @@ ggplot(mpg, aes(displ, hwy, colour = factor(cyl))) +
 
 ```
 
-## <span style="color:#88398A">Qué hay atraás de este plot?</span>
+## <span style="color:#88398A">¿Qué hay atrás de este plot?</span>
 
 - Cada observación representada como un punto cuya posición está de acuerdo a dos variables (posición horizontal y vertical)
 
-- Cada punto tiene tamaño,  color y forma estos atributos son llamados elementos estéticos (inglés aesthetics `aes` )
+- Cada punto tiene tamaño, color y forma estos atributos son llamados elementos estéticos (inglés aesthetics `aes` )
 
 -  Los `aes` son propiedades que pueden ser percibidas en el gráfico
 cada `aes` puede ser mapeado a una variable o fijado en un valor constante
 
 - `displ` es mapeado a la posición horizontal, `hwy`  a la posición vertical y `cyl` al color. Tamaño y forma no son mapeados a variables (valor por defecto) 
 
-## <span style="color:#88398A">Qué hay atrás de este plot?</span>
+## <span style="color:#88398A">¿Qué hay atrás de este plot?</span>
 
 ```{r, warning = FALSE, message = FALSE}
 library(dplyr)
@@ -91,61 +91,63 @@ theme(legend.position = "none")
 
 ## <span style="color:#88398A">Mismos datos dif plots</span>
 ```{r, echo=TRUE}
-
 ggplot(mpg, aes(displ, hwy, colour = factor(cyl))) + 
-  geom_bar(stat = "identity", position = "identity", fill = NA) + theme(legend.position = "none")
+  geom_bar(stat = "identity", 
+           position = "identity", fill = NA) +
+  theme(legend.position = "none")
+
 ```
 
 ## <span style="color:#88398A">Mismos datos dif plots</span>
 
-- Con los mismos datos podemos generar muchos gráficos que aunque estaán gramaticalmente bien, son visualizaciones que no tienen sentido
+- Con los mismos datos podemos generar muchos gráficos que aunque están gramaticalmente bien, son visualizaciones que no tienen sentido
 
 
-## <span style="color:#88398A">Otros geoms: geom_smooth</span>
-Si el scatterplot tiene mucho ruido se puede usar un suavizado para facilitar ver el patrón dominante usando `geom_smooth()`.
+<!-- ## <span style="color:#88398A">Otros geoms: geom_smooth</span> -->
+<!-- Si el scatterplot tiene mucho ruido se puede usar un suavizado para facilitar ver el patrón dominante usando `geom_smooth()`. -->
 
-Algunos argumentos...
+<!-- Algunos argumentos... -->
 
-Distintos `methods` de suavizado por ejemplo `lm`, `glm`, `gam`, `loess` y `rlm`
+<!-- Distintos `methods` de suavizado por ejemplo `lm`, `glm`, `gam`, `loess` y `rlm` -->
 
-`se` muestra el intervalo de confianza, por defecto es `TRUE`
+<!-- `se` muestra el intervalo de confianza, por defecto es `TRUE` -->
 
-`span` controla el monto de suavizado, valores altos produce lineas más suaves
+<!-- `span` controla el monto de suavizado, valores altos produce lineas más suaves -->
 
-## <span style="color:#88398A">Incluir un suavizado</span>
-```{r, echo=FALSE}
-library(ggplot2)
-# cargamos los datos 
-tips <- read.csv("http://www.ggobi.org/book/data/tips.csv")
+<!-- ## <span style="color:#88398A">Incluir un suavizado</span> -->
+<!-- ```{r, echo=FALSE} -->
+<!-- library(ggplot2) -->
+<!-- # cargamos los datos  -->
+<!-- tips <- read.csv("http://www.ggobi.org/book/data/tips.csv") -->
 
-```
-```{r, echo = TRUE, fig.height = 4, fig.width = 5, warning = FALSE, message=FALSE,fig.align="center", strip.white=TRUE }
+<!-- ``` -->
+<!-- ```{r, echo = TRUE, fig.height = 4, fig.width = 5, warning = FALSE, message=FALSE,fig.align="center", strip.white=TRUE } -->
 
-ggplot(data = tips, aes(x = totbill, y = tip)) +
-  geom_point() + theme(aspect.ratio = 1) +
-  geom_smooth()
-```
-
-
-## <span style="color:#88398A">Incluir un suavizado lineal</span>
-```{r, echo = TRUE, fig.height = 4, fig.width = 5, warning = FALSE, message=FALSE,fig.align="center", strip.white=TRUE }
-
-ggplot(data = tips, aes(x = totbill, y = tip)) +
-  geom_point() +  theme(aspect.ratio = 1) +
-  geom_smooth(method = "lm")
-```
+<!-- ggplot(data = tips, aes(x = totbill, y = tip)) + -->
+<!--   geom_point() + theme(aspect.ratio = 1) + -->
+<!--   geom_smooth() -->
+<!-- ``` -->
 
 
-## <span style="color:#88398A">Incluir una recta </span>
+<!-- ## <span style="color:#88398A">Incluir un suavizado lineal</span> -->
+<!-- ```{r, echo = TRUE, fig.height = 4, fig.width = 5, warning = FALSE, message=FALSE,fig.align="center", strip.white=TRUE } -->
 
-```{r, echo = TRUE, fig.height = 3, fig.width = 3, warning = FALSE, message=FALSE,fig.align="center", strip.white=TRUE }
-tips.lm <- lm(tip ~ totbill, data = tips)
-coef <- tips.lm$coefficients
-ggplot(data = tips, aes(x = totbill, y = tip)) +
-  geom_point() + theme(aspect.ratio = 1) +
-  geom_abline(intercept = coef[[1]] , slope = coef[[2]] )
+<!-- ggplot(data = tips, aes(x = totbill, y = tip)) + -->
+<!--   geom_point() +  theme(aspect.ratio = 1) + -->
+<!--   geom_smooth(method = "lm") -->
+<!-- ``` -->
 
-```
+
+<!-- ## <span style="color:#88398A">Incluir una recta </span> -->
+
+<!-- ```{r, echo = TRUE, fig.height = 3, fig.width = 3, warning = FALSE, message=FALSE,fig.align="center", strip.white=TRUE } -->
+<!-- tips.lm <- lm(tip ~ totbill, data = tips) -->
+<!-- coef <- tips.lm$coefficients -->
+<!-- ggplot(data = tips, aes(x = totbill, y = tip)) + -->
+<!--   geom_point() + theme(aspect.ratio = 1) + -->
+<!--   geom_abline(intercept = coef[[1]] , slope = coef[[2]] ) -->
+
+<!-- ``` -->
 
 
 ## <span style="color:#88398A">scales </span>
@@ -154,14 +156,37 @@ ggplot(data = tips, aes(x = totbill, y = tip)) +
 
 - La conversión es llamada escalado y es realizada por `scales`
 
-- `colour` son representados por una cadena de seis letras, `sizes` por nuúmeros y `shape` por enteros
+- `colour` son representados por una cadena de seis letras y números, `sizes` por números y `shape` por enteros
 
 - Estas especificaciones estéticas que tienen sentido para R se describen en ` vignette("ggplot2-specs")`
 
+## <span style="color:#88398A">scales </span>
+- Mapeo estético solamente dice que una variable debe ser mapeada a un elemento estético pero no dice cómo debe ser.
+
+- Cuando mapeo una variable a `shape` usando  `aes(shape = x)`  no especifico la forma (`shape`) específica que debe tomar.
+
+- Cuando uso  `aes(color = z)` no digo de que color debe ser
+
+- Describir el color, la forma, el tamaño etc (color, shape, size) a usar se hace mediante transformaciones en `scale`
+
+## <span style="color:#88398A">scales</span>
+
+- position
+- color and fill
+- size
+- shape
+- line type
+
+Las `scales` se modifican con una serie de funciones con el siguiente esquema de nombrado `scale_<aesthetic>_<type>`.  Mirar `scale_<tab>`  ver la lista de las funciones de `scale`.
+
+## <span style="color:#88398A">Disponibles scales</span>
+
+<img src="summary.png" width="700">
+
 ## <span style="color:#88398A">Incluir labs</span>
 
-```{r, echo = TRUE, fig.height = 3, fig.width = 4,  warning = FALSE, message=FALSE,fig.align="center", strip.white=TRUE }
-
+```{r, echo = TRUE, fig.height = 3, fig.width = 4,  warning = FALSE, message=FALSE,fig.align="center", strip.white=TRUE, cache=TRUE}
+tips <- read.csv("http://www.ggobi.org/book/data/tips.csv")
 ggplot(data = tips, aes(x = totbill, y = tip, colour = sex)) +
   geom_point() +  theme(aspect.ratio = 1) +
   labs(x = "Total de la cuenta", y = "Propina", 

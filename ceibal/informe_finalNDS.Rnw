@@ -214,7 +214,7 @@ theme_opts <- list(theme(panel.grid.minor = element_blank(),
 ggplot() + 
   geom_polygon(data =uystates_df, aes(x = long, y = lat, group = group, fill =
                                        count), color = "black", size = 0.25) +
-  theme(aspect.ratio=1)+
+  theme(aspect.ratio = 1)+
   scale_fill_gradient2(trans="log", breaks= c(1e2, 1e3, 1e4), midpoint = log(1e3)) +
   theme_opts 
 @
@@ -712,6 +712,11 @@ Predic_16_17 %>% filter(Centro_Grupo%in%factor(Cg[,1])) %>% filter(coberturaT>47
     geom_mosaic(aes(weight=tot, x=product(Abandono), fill = EE_Fuerte)) +
   scale_fill_brewer(palette = "Dark2") + labs(x = "Abandono", y = "", fill = "EE_Fuerte" )
 
+
+Predic_16_17 %>% filter(Centro_Grupo%in%factor(Cg[,1])) %>% filter(coberturaT>47)%>%  dplyr::select(Abandono, EE_Fuerte) %>%
+  mutate(Abandono = factor(Abandono) ) %>% group_by( Abandono, EE_Fuerte) %>% summarise(tot = n()) %>%ggplot() +
+    geom_mosaic(aes(weight=tot, x=product(EE_Fuerte), fill = Abandono)) +
+  scale_fill_brewer(palette = "Dark2") + labs(x = "EE_Fuerte", y = "", fill = "Abandono" )
 @
 \caption{Mosaicplot de Abandono vs Extra edad fuerte. El ancho de cada categoría corresponde a la probabilidad asociada a Abandono mientras que la altura se corresponde con la probabilidad condicional de Extra edad fuerte dado Abandono. En este caso estamos la información de alumnos de la matrícula que abandonaron de 2016 a 2017 dentro de los que tienen cobertura homogenea y cuayo valor supere los 47 días por género}
 \end{center}
