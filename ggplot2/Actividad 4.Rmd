@@ -1,0 +1,64 @@
+---
+title: "Actividad grupal 4"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Abra un archivo de R y responda las siguientes preguntas. En cada respuesta tiene que poner el código de R como respuesta.
+Cuando terminen me mandan el archivo por correo a natalia@iesta.edu.uy
+
+```{r}
+#Nombres de los integrantes del grupo
+
+# Ejercicio 1
+
+#1. código de R o texto con la respuesta
+#2. código de R o texto con la respuesta
+#3. código de R o texto con la respuesta
+
+```
+
+# Ejercicio 1
+
+Con los datos `mpg` que se encuentran disponible en `ggplot2` hacer un gráfico de barras para la variables `drv` con las siguientes características:
+
+
+-  Las barras tienen que estar coloreadas por `drv`
+
+- Incluir usando `labs` el nombre de los ejes y título informativo.
+
+- Usá la paleta de colores  `Dark2`, mirá la ayuda de `scale_colour_brewer`
+```{r, echo=FALSE}
+library(ggplot2)
+```
+```{r, eval=FALSE, echo = FALSE}
+
+  ggplot(data= mpg) + geom_bar(aes( x = drv, fill = drv)) +
+ scale_fill_brewer(palette = "Dark2")
+ 
+```
+
+# Ejercicio 2
+
+ Usando como base el gráfico anterior, incluya:
+ 
+ 
+- Incluir en el eje `y` porcentaje en vez de conteos
+
+-  Usando `scale_y_continuous` cambiar la escala del eje `y` a porcentajes
+
+- Usando `geom_text` incluir texto con porcentajes arriba de cada barra
+
+
+```{r, eval = FALSE, warning = FALSE, message = FALSE, echo = FALSE}
+  ggplot(data = mpg ) + geom_bar(aes( x = drv, fill = drv, y = (..count..)/sum(..count..))) + scale_y_continuous(labels =scales::percent)+
+scale_fill_brewer(palette = "Dark2") +
+    geom_text(aes( x = drv,label = scales::percent((..count..)/sum(..count..)), y = (..count..)/sum(..count..)), stat = "count", vjust = -.5) + labs(x = "Drv", y = "Porcentaje", fill = "Drv" )
+```
+
+
