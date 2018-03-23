@@ -1,0 +1,34 @@
+---
+title: "Pie vs Bar"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r cars, message=FALSE,warning=FALSE, echo=FALSE}
+dat <-  read.csv("ggplot2/piebar.csv")
+library(tidyverse)
+
+ggplot(data = dat, aes(x="", y=absdif, fill=tipo)) + geom_boxplot() +
+  labs(x="", y="Diferencia absoluta = |Estimado-Verdadero|", title ="Gráfico de caja con el error de percepción entre un Bar plot y un Pie plot")
+  
+
+
+```
+
+
+
+
+```{r, message=FALSE,warning=FALSE, echo=FALSE}
+dat %>% mutate( indi = rep(1:17, each=12) ) %>%
+  group_by( indi, tipo ) %>% 
+  summarise( tot.absdif = sum(absdif) ) %>%
+ggplot( aes(x = tipo, y = tot.absdif, group = indi)) + 
+  geom_line() 
+
+
+```
