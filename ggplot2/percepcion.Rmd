@@ -52,7 +52,7 @@ Cleveland & McGill (1984) Graphical Perception: Theory, Experimentation, and App
 - Pero cuando comparamos dos visualizaciones podemos usar la presisión como medida para evaluar los dos diseños
 
 
-Una forma gráfica que involucra tareas de percepción elementales que levan a evaluaciones más precisas que otras formas graficas,  deben resultar en una mejor organizacion y un incremento de las chances de una percepción correcta de patrones y comportamientos
+"Una forma gráfica que involucra tareas de percepción elementales que llevan a evaluaciones más precisas que otras formas gráficas,  deben resultar en una mejor organización y un incremento de las chances de una percepción correcta de patrones y comportamientos"
 
 
 ## <span style="color:#88398A">Evaluación de dos diseños distintos </span>
@@ -61,7 +61,7 @@ Experimentando en clase!
 
 - Vamos a estimar visualmente el valor que corresponde a cada barra y el porcentaje que corresponde a cada parte de la torta
 
-- Te voy a mostrar orimero un gráfico de barras con 6 clases y tenés que determinar los valores lo más preciso posible en 20 segundos
+- Te voy a mostrar primero un gráfico de barras con 6 clases y tenés que determinar los valores lo más preciso posible en 20 segundos
 
 - Posteriormente te voy a mostrar uno de torta con 6 clases y teneés que determinar los porcentajes lo más preciso posible en 30 segundos
 
