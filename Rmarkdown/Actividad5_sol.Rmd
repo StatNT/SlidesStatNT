@@ -1,0 +1,128 @@
+---
+title: "Actividad 5"
+author: "Natalia da Silva & Solange Estoy"
+date: "1/4/2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Cuando terminen la Actividad 5 me tienen que mandar 2 archivos: el archivo .Rmd y .pdf por correo a natalia@iesta.edu.uy.
+
+
+# Ejercicio 1
+
+1. Crear una carpeta en el disco D que se llame Rmarkdown.
+
+2. Crear un proyecto de RStudio en el disco D en la carpeta Rmarkdown, el nombre del proyecto también debe ser RMarkdown 
+
+3. Abrir un archivo de Rmarkdown que compile a pdf. 
+
+4. En YAML metadata:
+
+Título del documento: Actividad 5, RMarkdown en grupo
+Autores: Nombre y apellido de los integrantes del equipo
+`
+```{r, eval =FALSE, echo=TRUE}
+---
+title: "Actividad 5, RMarkdown en grupo"
+author: "Natalia da Silva & Solange Estoy"
+date: "1/4/2018"
+output: pdf_document
+---
+```
+  `
+5. Compilar (render) y ver que el documento sale bien en pdf
+
+
+# Ejercicio 2
+
+1. Incluir una sección que se llame "Ejercicio 2: Incluir imagen"
+`
+```{r, eval =FALSE, echo=TRUE}
+# Ejercicio 2:Incluir imagen
+``` 
+`
+2. Seleccionen una imagen que les guste de internet y guardarla en la carpeta donde está el proyecto.
+
+
+
+3. Inluya la imagen en la sección con una linea de texto de porqué le gusta la imagen
+
+
+`
+```{r, eval =FALSE, echo=TRUE}
+![](logoclass.png)
+``` 
+`
+![](logoclass.png)
+
+Lo seleccioné porque es el hex-sticker de nuetro curso y me gusta.
+
+
+# Ejercicio 3
+
+
+Ahora incluir una nueva sección que se llame "Chunck con código de R" 
+`
+```{r, eval =FALSE, echo=TRUE}
+# Chunck con código de R
+``` 
+`
+
+En la Actividad 3 Ejercicio 1 hicimos :
+
+"Con los datos `mpg` que se encuentran disponible en `ggplot2` hacer un plot con las siguientes características:
+
+- Un scatterplot de   `hwy` vs `cty` 
+
+- Incluir usando `labs` el nombre de los ejes, título informativo y nombre de la leyenda
+
+"
+
+
+1. Incluir un chunk con código en R que haga el gráfico antes descrito 
+
+```{r,echo = TRUE, fig.width=5, fig.height=5}
+library(ggplot2)
+
+ggplot(data = mpg, aes(x = hwy, y = cty)) +
+  geom_point() + theme(aspect.ratio = 1) +
+ labs(x = "Millas por galón en ruta", 
+      y = "Millas por galón en ciudad", 
+      title = "Scatterplot hwy vs cty") 
+```
+
+
+2. La figura tiene que tener 5 de alto y 5 de ancho
+
+` 
+```{r,echo = TRUE, fig.width=5, fig.height=5}
+
+``` 
+`
+3. Cuando compile el archivo asegurate que salga el código de R
+
+
+# Ejercicio 4
+
+Ahora incluir una nueva sección que se llame "Inluir una tabla" 
+
+
+`
+```{r, eval =FALSE, echo=TRUE}
+# Inluir una tabla
+``` 
+`
+
+1. Con los datos de mpg seleccione las filas 1:5 y las columnas de 1:5 y haga una tabla usando `xtable`
+
+```{r, echo=TRUE, results='asis',message=FALSE,warning=FALSE}
+library(xtable)
+options(xtable.comment = FALSE)
+xtable(mpg[1:5, 1:5])
+
+```
+2. Cuando compile el archivo asegurate que salga el código de R
