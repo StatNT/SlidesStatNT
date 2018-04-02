@@ -73,7 +73,7 @@ y reportes desde R
 
 - Documentos en RMarkdown son documentos en Markdown.
 
-- Los documentos de R Markdown son completamente reporoducibles. Puede ser automáticamente regenerado si el coódigo y/ó los datos se modifican. 
+- Los documentos de R Markdown son completamente reporoducibles. Puede ser automáticamente regenerado si el código y/ó los datos se modifican. 
 
 [Guia de referencia](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
 
@@ -194,7 +194,7 @@ print(tb,  type ="html")
 ```
 
 
-## <span style="color:#88398A">Tablas con `xtable`</span>
+## <span style="color:#88398A">Tablas con `kable`</span>
 
 ```{r, echo=TRUE,results='asis', message = FALSE, warning = FALSE}
 library(knitr)
