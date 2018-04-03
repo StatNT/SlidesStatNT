@@ -1,0 +1,18 @@
+---
+title: "Premio Finalización de Doctorado "
+author: "Natalia da Silva"
+date: "4/3/2018"
+output: pdf_document
+---
+ 
+ 
+# Plan de Actividades
+ 
+ He finalizado mi Doctorado en Estadística en Iowa State University en Junio del 2017 y he retornado al país en Agosto del mismo año. Soy docente grado 3 30 horas efectivo en el Instituto de Estadística de la Facultad de Ciencias Económicas y de Administración.   
+ En el marco del Programa de CSIC "Premio a la Finalización de Doctorado Académico de Docentes Universitarios" planeo hacer una estadía de investigación en el Department of Econometrics and Business Statistics, Monash University junto a mi tutora de tesis Dianne Cook.    
+ 
+ 
+ Mi estadía pretende consolidar mi trabajo de doctorado y fortalecer los vínculos con esta institución cuyo perfil es de interés para nuestra facultad.  En mi proyecto de doctorado desarrollé un método de clasificación supervisado basado en agregación de árboles. El método de agregación utiliza árboles de proyección (PPtree, Lee et.al (2013)). Los resultados en cuanto a la preformance predictiva en base a datos reales y simulados son alentadores. Sin embargo es necesario extender los escenarios de simulación para identificar en que contextos este método es mejor que otros.    
+ 
+
+Este proceso de combinar múltiples  árboles de clasificación produce numerosos diagnósticos que mediante gráficos interactivos pueden darnos información sobre la estructura de clases en altas dimensiones. He desarrollado herramientas que permiten evaluar la complejidad del modelo, la contribución de los modelos individuales, la importancia de las variables y la incertidumbre en la predicción asociada con las observaciones individuales. En esta estadía pienso trajar en generalizaciones de estas herramientas para otros  métodos de agregación.   
