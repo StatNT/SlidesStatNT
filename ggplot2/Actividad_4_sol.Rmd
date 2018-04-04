@@ -1,5 +1,5 @@
 ---
-title: "Actividad grupal 4"
+title: "Actividad 4 solución"
 output:
   pdf_document: default
   fig_caption: true
