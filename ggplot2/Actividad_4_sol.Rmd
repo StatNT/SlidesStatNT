@@ -35,7 +35,10 @@ Con los datos `mpg` que se encuentran disponible en `ggplot2` hacer un gráfico 
 
 - Incluir usando `labs` el nombre de los ejes y título informativo.
 
-- Usá la paleta de colores  `Dark2`, mirá la ayuda de `scale_colour_brewer`
+- Usá la paleta de colores  `Dark2`, mirá la ayuda de `scale_colour_brewer`  
+
+&nbsp;
+
 ```{r, echo=FALSE}
 library(ggplot2)
 cap1 <- "Gráfico de barras con la cantidad de  modelos según tracción. Se puede ver que la mayoría de modelos tienen tracción delantera o 4x4."
@@ -63,7 +66,9 @@ ggplot(data = mpg) + geom_bar(aes(x = drv, fill = drv)) +
 
 -  Usando `scale_y_continuous` cambiar la escala del eje `y` a porcentajes
 
-- Usando `geom_text` incluir texto con porcentajes arriba de cada barra
+- Usando `geom_text` incluir texto con porcentajes arriba de cada barra  
+
+&nbsp;
 
 ```{r, echo = FALSE}
 cap2 <-  "Gráfico de barras con el porcentaje de  modelos según tracción. Se puede ver que la mayoría de modelos tienen tracción delantera o 4x4. 45.3 tienen tracción delantera, 44 tracción 4x4 y 10.7 tracción trasera"
