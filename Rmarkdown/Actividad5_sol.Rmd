@@ -2,11 +2,12 @@
 title: "Actividad 5"
 author: "Natalia da Silva & Solange Estoy"
 date: "1/4/2018"
-output: pdf_document
+output:
+  pdf_document: default
+  fig_caption: true
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, tidy.opts = list(width.cutoff = 50), tidy = TRUE, fig.pos = 'h', out.extra = '')
 ```
 
 Cuando terminen la Actividad 5 me tienen que mandar 2 archivos: el archivo .Rmd y .pdf por correo a natalia@iesta.edu.uy.
@@ -27,15 +28,18 @@ Autores: Nombre y apellido de los integrantes del equipo
 `
 ```{r, eval =FALSE, echo=TRUE}
 ---
-title: "Actividad 5, RMarkdown en grupo"
+title: "Actividad 5"
 author: "Natalia da Silva & Solange Estoy"
 date: "1/4/2018"
-output: pdf_document
+output:
+  pdf_document: default
+  fig_caption: true
 ---
 ```
   `
 5. Compilar (render) y ver que el documento sale bien en pdf
 
+\pagebreak
 
 # Ejercicio 2
 
@@ -53,14 +57,15 @@ output: pdf_document
 
 
 `
-```{r, eval =FALSE, echo=TRUE}
-![](logoclass.png)
+```{r, eval = FALSE, echo = TRUE}
+![](logoclass.png){width=100px}
 ``` 
 `
-![](logoclass.png)
+![](logoclass.png){width=100px}
 
 Lo seleccioné porque es el hex-sticker de nuetro curso y me gusta.
 
+\pagebreak
 
 # Ejercicio 3
 
@@ -84,25 +89,29 @@ En la Actividad 3 Ejercicio 1 hicimos :
 
 
 1. Incluir un chunk con código en R que haga el gráfico antes descrito 
+```{r,echo =FALSE}
+cap1 <- "Gráfico de dispersión de millas por galón en ruta vs millas por galón en ciudad. Se puede observar una asociación lineal, positiva y fuerte entre las dos variables analizadas"
+```
 
-```{r,echo = TRUE, fig.width=5, fig.height=5}
+
+
+```{r, echo = TRUE, fig.width=5, fig.height=5, fig.cap=cap1}
 library(ggplot2)
 
 ggplot(data = mpg, aes(x = hwy, y = cty)) +
   geom_point() + theme(aspect.ratio = 1) +
  labs(x = "Millas por galón en ruta", 
-      y = "Millas por galón en ciudad", 
-      title = "Scatterplot hwy vs cty") 
+      y = "Millas por galón en ciudad") 
 ```
 
 
 2. La figura tiene que tener 5 de alto y 5 de ancho
 
-` 
-```{r,echo = TRUE, fig.width=5, fig.height=5}
+Para definir el tamaño de la imagen hay que incluir en el chunck de código fig.height=5 and fig.cap=cap1 
+ 
 
-``` 
-`
+
+
 3. Cuando compile el archivo asegurate que salga el código de R
 
 
@@ -119,10 +128,18 @@ Ahora incluir una nueva sección que se llame "Inluir una tabla"
 
 1. Con los datos de mpg seleccione las filas 1:5 y las columnas de 1:5 y haga una tabla usando `xtable`
 
+```{r, echo=FALSE}
+capt <- "Tabla de las primeras 5 observaciones de mpg y las primeras 5 variables"
+```
+
+
+`capt <- "Tabla de las primeras 5 observaciones de mpg y las primeras 5 variables"`
+
 ```{r, echo=TRUE, results='asis',message=FALSE,warning=FALSE}
 library(xtable)
 options(xtable.comment = FALSE)
-xtable(mpg[1:5, 1:5])
+tab <- xtable(mpg[1:5, 1:5], caption = capt )
 
+print(tab,caption.placement = "top")
 ```
 2. Cuando compile el archivo asegurate que salga el código de R
