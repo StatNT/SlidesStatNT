@@ -47,8 +47,7 @@ cap1 <- "Gráfico de barras con la cantidad de  modelos según tracción. Se pue
 ```
 ```{r, fig.cap = cap1}
 
-ggplot(data = mpg) + geom_bar(aes(x = drv, fill = drv)) +
-  labs(x = "Tracción", y = "Frecuencia" , fill = "Tracción") + scale_fill_brewer(palette = "Dark2", labels = c('4' = '4x4', 'f' = 'Delantera', 'r' = 'Trasera')) +
+ggplot(data = mpg) + geom_bar(aes(x = drv, fill = drv)) + labs(x = "Tracción", y = "Frecuencia" , fill = "Tracción") + scale_fill_brewer(palette = "Dark2", labels = c('4' = '4x4', 'f' = 'Delantera', 'r' = 'Trasera')) +
   theme(axis.ticks.x = element_blank()) +
   scale_x_discrete(labels = c('4' = '4x4', 'f' = 'Delantera',
   'r' = 'Trasera'))
@@ -75,6 +74,7 @@ cap2 <-  "Gráfico de barras con el porcentaje de  modelos según tracción. Se 
 ```
 
 ```{r,  fig.cap = cap2}
+
 ggplot(data = mpg) + geom_bar(aes( x = drv, fill = drv, y = (..count..) / sum(..count..))) +
   scale_y_continuous(labels = scales::percent) +
   scale_fill_brewer(palette = "Dark2", labels = c('4' = '4x4', 'f' = 'Delantera','r' = 'Trasera')) +
@@ -86,7 +86,13 @@ ggplot(data = mpg) + geom_bar(aes( x = drv, fill = drv, y = (..count..) / sum(..
 
 ```
 
+```{r, echo=FALSE, eval=FALSE}
+ggplot(data = mpg) + geom_bar(aes( x = drv, fill = drv, y = (..count..) / sum(..count..))) +
+  scale_y_continuous(labels = scales::percent) +
+  scale_fill_brewer(palette = "Dark2") +
+  geom_text(aes(x = drv, label = scales::percent((..count..) / sum(..count..)),
+  y = (..count..) / sum(..count..)), stat = "count", vjust = -.5) +
+   labs(x = "Tracción", y = "Frecuencia", fill = "Tracción") +   theme(axis.ticks.x = element_blank()) 
+ 
+```
 
-
-
-  
