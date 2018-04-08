@@ -1,28 +1,36 @@
 ---
-title: "Nuevas tecnologías para el análisis astadístico de datos"
-subtitle: 'Git & GitHub'
-author: "Natalia da Silva (natalia@iesta.edu.uy, @pacocuak)"
-date: ""
-output:
-  xaringan::moon_reader:
-    css: ["myslides", "rladies-font.css"]
-    self_contained: false
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
+title: <span style="color:#88398A">   Git y GitHub</span>
+author: <span style="color:#88398A"> <font size="6">Natalia da Silva, \@STA_NT</span></font>
+
+date: <span style="color:#88398A"> 5 de Abril, 2018
+output: ioslides_presentation
+logo: logoclass.png
+widescreen: no
 ---
 
-# Git es...
+ <style>
+ .title-slide {
+     background-image: url(logo.png);
+     background-repeat: no-repeat;
+     padding:40px;
+     background-position: 90% 80%;
+     background-size: 200px 200px;
+   }
+   </style>
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
 
-- Git es uns sistema de control de versionado originalmente diseñado para ayudar a grupos de desarrolladores a hacer trabajo colaborativo en
+## <span style="color:#88398A"> Git es...</span>
+
+- Git es un sistema de control de versionado originalmente diseñado para ayudar a grupos de desarrolladores a hacer trabajo colaborativo en
 proyectos grandes de desarrolo de software.
 
-- Git ha sido tomado por la comunidad de ciencia de datos redefiniendo el proposito. Lo usamos para manejar la colección de archivos que hacen a un proyecto.
+- Git ha sido tomado por la comunidad de ciencia de datos redefiniendo el propósito. Lo usamos para manejar la colección de archivos que hacen a un proyecto.
 <!-- datos, figuras, reportes, codigo fuente -->
----
 
-# Porqué GitHub? 
+
+## <span style="color:#88398A"> Porqué GitHub? </span>
 
 - Brinda un lugar en internet para tu proyecto basado en Git.
 
@@ -30,9 +38,8 @@ proyectos grandes de desarrolo de software.
 
 - Colaborar, otras personas puden ver el proyecto, sincronizarlo con el tuyo y hacer cambios.
 
----
 
-# Que necesitamos
+## <span style="color:#88398A"> Que necesitamos </span>
 
 - Installar Git
 
@@ -40,9 +47,9 @@ proyectos grandes de desarrolo de software.
 
 - Lograr que RStudio se comunique con Git y GitHub
 
----
 
-# Que hacer
+
+## <span style="color:#88398A"> Que hacer </span>
 
 - Dedicar una carpeta para cada proyecto.
 
@@ -50,13 +57,17 @@ proyectos grandes de desarrolo de software.
 
 - Hacer un repositorio nuevo de Git.
 
-- Trabajar en el proyecto y en vez de salvar hago `commit`.
+- Trabajar en el proyecto y en vez de salvar hago `commit` de uno o múltiples archivos.
 
 - `push`  el  `commit` al repositorio de GitHub.
 
----
+## <span style="color:#88398A"> Mostrar paso a paso</span>
 
-# Que ganamos
+Ejemplo en mi GitHub  
+
+https://github.com/natydasilva?tab=repositories
+
+## <span style="color:#88398A">  Que ganamos</span>
 
 - Mostrar tu trabajo publicamente
 <!-- - La gente puede ver tu trabajo si el repositorio es público usar tu código pueden clonar o forkear el repositorio -->
@@ -65,9 +76,16 @@ proyectos grandes de desarrolo de software.
 <!-- - Si te interesa algún proyecto de otro podes tener notificaciones de actualizaciones o forkear el repositorio -->
 
 - Colaboradores predeterminados y hasta externos
----
 
-# Especiales de GitHub
+
+## <span style="color:#88398A"> Quien hace qué</span>
+
+- Repositorios públicos disponible para que cualquiera lo lea. Propietario puede establecer niveles de permisos altos para `push commits` 
+
+- Repositorios privados son invisibles para todos. Propietario puede establecer privilegios y acceso a otros.
+
+
+## <span style="color:#88398A">  Especiales de GitHub</span>
 
 - **Issues**
  Es una lista de cosas, bugs, pedidos de cambios, comentarios, etc.  
@@ -79,14 +97,26 @@ Permite que un proyecto tenga múltiples ramas de desarrollo independiente.
 Algunas ramas pueden pegarse a la versión de desarrollo original.
 
  Un "pull request" es una propuesta formal de proponer cambios puede estar relacionados a la solucion de un problema (issue).
----
 
 
-# Tu turno!
 
-1. Hacer una cuenta de GitHub
-2. Armar un proyecto y agregar colaboradores
+## <span style="color:#88398A">  Tu turno!</span>
 
+1. Hacer una cuenta de GitHub https://github.com
+
+2. Crear un repositorio  GitHub llamado holaGitHub
+
+3. Hacer un proyecto de RStudio para conectar con GitHub (Version control)
+
+4. Fijar tu cuenta de correo para todo repositorio en tu computadora
+Escribir esto en la terminal  
+git config --global user.email "email@example.com"
+
+5. Copiar los archivos de la Actividad 5 en la carpeta del proyecto
+
+6. Hacer tu primer commit y push
+
+7. Mandá tu cuenta de GitHub a @STAT_NT 
 
 ---
 
